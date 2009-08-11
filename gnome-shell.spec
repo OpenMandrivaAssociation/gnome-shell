@@ -22,7 +22,10 @@ BuildRequires: libgnomeui2-devel
 BuildRequires: gir-repository
 Requires: mutter
 Requires: gjs
-
+Requires: gir-repository
+# for testing without --replace 
+Suggests:  x11-server-xephyr xterm
+Suggests:  xlogo xeyes 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
 particular, it offers new paradigms for launching applications,
