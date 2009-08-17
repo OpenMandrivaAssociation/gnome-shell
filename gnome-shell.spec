@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.27.0
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -23,6 +23,8 @@ BuildRequires: gir-repository
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
+#gw for glxinfo
+Requires: mesa-demos
 # for testing without --replace 
 Suggests:  x11-server-xephyr xterm
 Suggests:  xlogo xeyes 
