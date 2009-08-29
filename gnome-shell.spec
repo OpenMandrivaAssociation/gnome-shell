@@ -20,6 +20,7 @@ BuildRequires: gnome-menus-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: gnome-desktop-devel
 BuildRequires: gir-repository
+BuildRequires: intltool
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
