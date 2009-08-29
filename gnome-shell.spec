@@ -1,6 +1,6 @@
 %define name gnome-shell
-%define version 2.27.0
-%define release %mkrel 4
+%define version 2.27.1
+%define release %mkrel 1
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -11,14 +11,14 @@ License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: mutter-devel
+BuildRequires: mutter-devel >= 2.27.3
 BuildRequires: gjs-devel
 BuildRequires: libgstreamer-plugins-base-devel >= 0.10.16
 BuildRequires: clutter-gtk-devel
 BuildRequires: librsvg-devel
 BuildRequires: gnome-menus-devel
 BuildRequires: dbus-glib-devel
-BuildRequires: libgnomeui2-devel
+BuildRequires: gnome-desktop-devel
 BuildRequires: gir-repository
 Requires: mutter
 Requires: gjs
@@ -51,6 +51,7 @@ make
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+%find_lang %name
 
 %clean
 rm -rf %{buildroot}
@@ -65,7 +66,7 @@ rm -rf %{buildroot}
 %preun_uninstall_gconf_schemas %schemas
 
 
-%files
+%files -f %name.lang
 %defattr(-,root,root)
 #%doc README NEWS AUTHORS ChangeLog
 %_sysconfdir/gconf/schemas/gnome-shell.schemas
