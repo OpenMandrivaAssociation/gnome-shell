@@ -1,5 +1,5 @@
 %define name gnome-shell
-%define version 2.27.3
+%define version 2.28.0
 %define release %mkrel 1
 
 Summary: Next generation GNOME desktop shell
@@ -11,7 +11,7 @@ License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: mutter-devel >= 2.27.3
+BuildRequires: mutter-devel >= 2.28.0
 BuildRequires: gjs-devel
 BuildRequires: libgstreamer-plugins-base-devel >= 0.10.16
 BuildRequires: clutter-gtk-devel
