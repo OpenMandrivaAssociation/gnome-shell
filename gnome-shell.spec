@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.28.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -24,8 +24,7 @@ BuildRequires: intltool
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
-#gw for glxinfo
-Requires: mesa-demos
+Requires: glxinfo
 # for testing without --replace 
 Suggests:  x11-server-xephyr xterm
 Suggests:  xlogo xeyes 
