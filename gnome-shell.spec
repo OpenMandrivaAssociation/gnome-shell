@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.28.0
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -44,7 +44,7 @@ graphical technologies.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --enable-compile-warnings=no
 #gw parallel build broken in 2.27.0
 make
 
