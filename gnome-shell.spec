@@ -1,12 +1,17 @@
 %define name gnome-shell
-%define version 2.28.0
-%define release %mkrel 4
+%define version 2.29.0
+%define release %mkrel 1
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+# different fix for https://bugzilla.gnome.org/show_bug.cgi?id=573413
+Patch0: gnome-shell-2.29.0-fix-xulrunner-libdir.patch
+#gw fix gettext translation file names
+# https://bugzilla.gnome.org/show_bug.cgi?id=610787
+Patch1: gnome-shell-2.29.0-fix-gettext-installation.patch
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
@@ -25,6 +30,7 @@ Requires: mutter
 Requires: gjs
 Requires: gir-repository
 Requires: glxinfo
+Requires: %xulrunner_libname
 # for testing without --replace 
 Suggests:  x11-server-xephyr xterm
 Suggests:  xlogo xeyes 
@@ -42,8 +48,13 @@ graphical technologies.
 
 %prep
 %setup -q
+%apply_patches
+autoreconf -fi
+sed -i "s^xXULRUNNERDIRx^%xulrunner_mozappdir^" src/gnome-shell.in
 
 %build
+#gw else it does not find libmozjs.so
+export LD_LIBRARY_PATH=%xulrunner_mozappdir
 %configure2_5x --enable-compile-warnings=no
 #gw parallel build broken in 2.27.0
 make
@@ -68,7 +79,8 @@ rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
-#%doc README NEWS AUTHORS ChangeLog
+%doc README 
+#NEWS AUTHORS
 %_sysconfdir/gconf/schemas/gnome-shell.schemas
 %_bindir/%name
 %_libdir/%name
@@ -76,4 +88,4 @@ rm -rf %{buildroot}
 %_libdir/mutter/plugins/libgnome-shell.so
 %_datadir/applications/%name.desktop
 %_datadir/%name
-
+%_mandir/man1/%name.1*
