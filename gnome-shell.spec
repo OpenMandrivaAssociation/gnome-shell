@@ -2,6 +2,10 @@
 %define version 2.29.0
 %define release %mkrel 1
 
+#gw work around missing macros in the build bot:
+%{!?xulrunner_libname: %{expand: %%global xulrunner_libname libxulrunner}}
+%{!?xulrunner_mozappdir: %{expand: %%global xulrunner_mozappdir /usr/lib}}
+
 Summary: Next generation GNOME desktop shell
 Name: %{name}
 Version: %{version}
