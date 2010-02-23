@@ -31,6 +31,7 @@ Requires: gjs
 Requires: gir-repository
 Requires: glxinfo
 %if %mdvver >= 201000
+BuildRequires: xulrunner-devel
 Requires: %xulrunner_libname
 %endif
 # for testing without --replace 
