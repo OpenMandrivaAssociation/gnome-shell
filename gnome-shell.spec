@@ -30,7 +30,9 @@ Requires: mutter
 Requires: gjs
 Requires: gir-repository
 Requires: glxinfo
+%if %mdvver >= 201000
 Requires: %xulrunner_libname
+%endif
 # for testing without --replace 
 Suggests:  x11-server-xephyr xterm
 Suggests:  xlogo xeyes 
