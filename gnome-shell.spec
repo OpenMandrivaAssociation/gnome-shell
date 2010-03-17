@@ -86,9 +86,10 @@ EOF
 %clean
 rm -rf %{buildroot}
 
-%post
 %define schemas gnome-shell
+
 %if %mdkversion < 200900
+%post
 %post_install_gconf_schemas %schemas
 %endif
 
