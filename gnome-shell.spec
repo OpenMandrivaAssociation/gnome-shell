@@ -1,12 +1,13 @@
 %define name gnome-shell
 %define version 2.29.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source1: gnome-shell-session
 # different fix for https://bugzilla.gnome.org/show_bug.cgi?id=573413
 Patch0: gnome-shell-2.29.0-fix-xulrunner-libdir.patch
 #gw fix gettext translation file names
@@ -56,14 +57,31 @@ sed -i "s^xXULRUNNERDIRx^%xulrunner_mozappdir^" src/gnome-shell.in
 %build
 #gw else it does not find libmozjs.so
 export LD_LIBRARY_PATH=%xulrunner_mozappdir
-%configure2_5x --enable-compile-warnings=no
-#gw parallel build broken in 2.27.0
-make
+%configure2_5x --enable-compile-warnings=no \
+ --disable-static 
+%make
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 %find_lang %name
+
+mkdir -p %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
+cp -f %{buildroot}/%{_datadir}/applications/gnome-shell.desktop %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
+
+install -m 755 %{SOURCE1} %{buildroot}/%{_datadir}/gnome-shell/
+
+# wmsession session file
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d
+cat << EOF > $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d/11GNOME3
+NAME=GNOME 3 Preview
+ICON=gnome-logo-icon-transparent.png
+DESC=GNOME Environment
+EXEC=%{_datadir}/gnome-shell/gnome-shell-session
+SCRIPT:
+exec %{_datadir}/gnome-shell/gnome-shell-session
+EOF
+
 
 %clean
 rm -rf %{buildroot}
@@ -81,8 +99,8 @@ rm -rf %{buildroot}
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README 
-#NEWS AUTHORS
 %_sysconfdir/gconf/schemas/gnome-shell.schemas
+%_sysconfdir/X11/wmsession.d/*
 %_bindir/%name
 %_libdir/%name
 %_libdir/mutter/plugins/libgnome-shell.la
