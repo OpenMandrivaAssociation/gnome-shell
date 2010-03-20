@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.29.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -13,12 +13,16 @@ Patch0: gnome-shell-2.29.0-fix-xulrunner-libdir.patch
 #gw fix gettext translation file names
 # https://bugzilla.gnome.org/show_bug.cgi?id=610787
 Patch1: gnome-shell-2.29.0-fix-gettext-installation.patch
+#gw make it build with gjs 0.6
+#https://qa.mandriva.com/show_bug.cgi?id=58274
+#https://bugzilla.gnome.org/show_bug.cgi?id=610845
+Patch2: gnome-shell-fix-for-gjs0.6.patch
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mutter-devel >= 2.28.0
-BuildRequires: gjs-devel
+BuildRequires: gjs-devel >= 0.6
 BuildRequires: libgstreamer-plugins-base-devel >= 0.10.16
 BuildRequires: clutter-gtk-devel
 BuildRequires: librsvg-devel
@@ -51,6 +55,7 @@ graphical technologies.
 %prep
 %setup -q
 %apply_patches
+#gw patch 1:
 autoreconf -fi
 sed -i "s^xXULRUNNERDIRx^%xulrunner_mozappdir^" src/gnome-shell.in
 
