@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.29.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -28,6 +28,7 @@ Requires: mutter
 Requires: gjs
 Requires: gir-repository
 Requires: glxinfo
+Requires: gnome-session
 BuildRequires: xulrunner-devel
 %{?xulrunner_libname:Requires: %xulrunner_libname}
 # for testing without --replace 
