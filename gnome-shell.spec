@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.29.1
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -31,9 +31,7 @@ Requires: glxinfo
 Requires: gnome-session
 BuildRequires: xulrunner-devel
 %{?xulrunner_libname:Requires: %xulrunner_libname}
-# for testing without --replace 
-Suggests:  x11-server-xephyr xterm
-Suggests:  xlogo xeyes 
+
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
 particular, it offers new paradigms for launching applications,
