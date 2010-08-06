@@ -1,6 +1,6 @@
 %define name gnome-shell
 %define version 2.29.1
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -22,7 +22,6 @@ BuildRequires: librsvg-devel
 BuildRequires: gnome-menus-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: gnome-desktop-devel
-BuildRequires: gir-repository
 BuildRequires: intltool
 Requires: mutter
 Requires: gjs
@@ -42,7 +41,6 @@ management. The GNOME Shell is intended to replace functions handled
 by the GNOME Panel and by the window manager in previous versions of
 GNOME. The GNOME Shell has rich visual effects enabled by new
 graphical technologies.
-
 
 %prep
 %setup -q
