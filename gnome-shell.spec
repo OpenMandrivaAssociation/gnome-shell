@@ -50,6 +50,7 @@ graphical technologies.
 %apply_patches
 
 %build
+export LD_LIBRARY_PATH=%xulrunner_mozappdir
 %configure2_5x --enable-compile-warnings=no \
  --disable-static --disable-schemas-install
 %make
