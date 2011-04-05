@@ -1,6 +1,6 @@
 %define name gnome-shell
-%define version 2.29.1
-%define release %mkrel 8
+%define version 3.0.0.1
+%define release %mkrel 1
 
 Summary: Next generation GNOME desktop shell
 Name: %{name}
@@ -8,28 +8,28 @@ Version: %{version}
 Release: %{release}
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-shell-session
-# different fix for https://bugzilla.gnome.org/show_bug.cgi?id=573413
-Patch0: gnome-shell-2.29.0-fix-xulrunner-libdir.patch
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: mutter-devel >= 2.28.0
-BuildRequires: gjs-devel >= 0.6
+BuildRequires: mutter-devel >= 3.0.0
+BuildRequires: gjs-devel >= 0.7.11
 BuildRequires: libgstreamer-plugins-base-devel >= 0.10.16
-BuildRequires: clutter-gtk-devel
-BuildRequires: librsvg-devel
+BuildRequires: clutter-devel >= 1.5.15
 BuildRequires: gnome-menus-devel
 BuildRequires: dbus-glib-devel
-BuildRequires: gnome-desktop-devel
+BuildRequires: gnome-desktop3-devel >= 2.90.0
+BuildRequires: libtelepathy-glib-devel >= 0.13.12
+BuildRequires: libtelepathy-logger-devel >= 0.2.4
+BuildRequires: gtk+3.0-devel >= 3.0.0
+BuildRequires: evolution-data-server-devel >= 1.2.0
+BuildRequires: gsettings-desktop-schemas-devel >= 0.1.7
 BuildRequires: intltool
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
 Requires: glxinfo
 Requires: gnome-session
-BuildRequires: xulrunner-devel
-%{?xulrunner_libname:Requires: %xulrunner_libname}
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
@@ -45,13 +45,10 @@ graphical technologies.
 %prep
 %setup -q
 %apply_patches
-sed -i "s^xXULRUNNERDIRx^%xulrunner_mozappdir^" src/gnome-shell.in
 
 %build
-#gw else it does not find libmozjs.so
-export LD_LIBRARY_PATH=%xulrunner_mozappdir
 %configure2_5x --enable-compile-warnings=no \
- --disable-static 
+ --disable-static --disable-schemas-install
 %make
 
 %install
