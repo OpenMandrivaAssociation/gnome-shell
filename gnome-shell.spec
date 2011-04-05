@@ -25,6 +25,9 @@ BuildRequires: gtk+3.0-devel >= 3.0.0
 BuildRequires: evolution-data-server-devel >= 1.2.0
 BuildRequires: gsettings-desktop-schemas-devel >= 0.1.7
 BuildRequires: intltool
+BuildRequires: polkit-1-devel
+BuildRequires: libcanberra-devel
+BuildRequires: pulseaudio-devel
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
@@ -53,7 +56,7 @@ graphical technologies.
 
 %install
 rm -rf %{buildroot}
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
+%makeinstall_std
 %find_lang %name
 
 mkdir -p %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
@@ -86,16 +89,17 @@ rm -rf %{buildroot}
 %preun
 %preun_uninstall_gconf_schemas %schemas
 
-
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README 
 %_sysconfdir/gconf/schemas/gnome-shell.schemas
 %_sysconfdir/X11/wmsession.d/*
-%_bindir/%name
+%_bindir/*
 %_libdir/%name
-%_libdir/mutter/plugins/libgnome-shell.la
-%_libdir/mutter/plugins/libgnome-shell.so
+%{_libexecdir}/gnome-shell-calendar-server
+%{_libexecdir}/gnome-shell-perf-helper
+%{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
+%{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %_datadir/applications/%name.desktop
 %_datadir/%name
 %_mandir/man1/%name.1*
