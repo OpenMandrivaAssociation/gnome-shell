@@ -1,5 +1,5 @@
 %define name gnome-shell
-%define version 3.0.0.2
+%define version 3.0.1
 %define release %mkrel 1
 
 Summary: Next generation GNOME desktop shell
