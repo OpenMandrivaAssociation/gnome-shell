@@ -7,13 +7,16 @@ Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 Source1: gnome-shell-session
+#Patch0:	gnome-shell-3.1.4-bluetooth-libdir.patch
 
 BuildRequires: intltool
+BuildRequires: rootcerts
 BuildRequires: polkit-1-devel
 BuildRequires: pkgconfig(clutter-1.0)
 BuildRequires: pkgconfig(dbus-glib-1)
 BuildRequires: pkgconfig(folks)
 BuildRequires: pkgconfig(gjs-1.0)
+#BuildRequires: pkgconfig(gnome-bluetooth-1.0)
 BuildRequires: pkgconfig(gnome-desktop-3.0)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
@@ -49,15 +52,16 @@ graphical technologies.
 %prep
 %setup -q
 %apply_patches
+#autoreconf
 
 %build
-#export LD_LIBRARY_PATH=%xulrunner_mozappdir
+#export LD_LIBRARY_PATH=%{_libdir}/gnome-bluetooth
 %configure2_5x \
 	--disable-static \
 	--enable-compile-warnings=no \
 	--disable-schemas-install
 
-%make
+%make LIBS='-lgmodule-2.0'
 
 %install
 rm -rf %{buildroot}
