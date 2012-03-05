@@ -1,33 +1,34 @@
-%define name gnome-shell
-%define version 3.0.2
-%define release %mkrel 1
-
 Summary: Next generation GNOME desktop shell
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Source1: gnome-shell-session
+Name: gnome-shell
+Version: 3.2.2.1
+Release: 1
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: mutter-devel >= 3.0.0
-BuildRequires: gjs-devel >= 0.7.11
-BuildRequires: libgstreamer-plugins-base-devel >= 0.10.16
-BuildRequires: clutter-devel >= 1.5.15
-BuildRequires: gnome-menus-devel
-BuildRequires: dbus-glib-devel
-BuildRequires: gnome-desktop3-devel >= 2.90.0
-BuildRequires: libtelepathy-glib-devel >= 0.13.12
-BuildRequires: libtelepathy-logger-devel >= 0.2.4
-BuildRequires: gtk+3.0-devel >= 3.0.0
-BuildRequires: evolution-data-server-devel >= 1.2.0
-BuildRequires: gsettings-desktop-schemas-devel >= 0.1.7
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source1: gnome-shell-session
+
 BuildRequires: intltool
 BuildRequires: polkit-1-devel
-BuildRequires: libcanberra-devel
-BuildRequires: pulseaudio-devel
+BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(dbus-glib-1)
+BuildRequires: pkgconfig(folks)
+BuildRequires: pkgconfig(gjs-1.0)
+BuildRequires: pkgconfig(gnome-desktop-3.0)
+BuildRequires: pkgconfig(gsettings-desktop-schemas)
+BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(libcanberra)
+#BuildRequires: pkgconfig(libedataserver-1.2)
+BuildRequires: pkgconfig(libedataserverui-3.0)
+BuildRequires: pkgconfig(libgnome-menu-3.0)
+BuildRequires: pkgconfig(libmutter)
+BuildRequires: pkgconfig(libnm-glib)
+BuildRequires: pkgconfig(libnm-util)
+BuildRequires: pkgconfig(libpulse)
+BuildRequires: pkgconfig(telepathy-glib)
+BuildRequires: pkgconfig(telepathy-logger-0.2)
+
 Requires: mutter
 Requires: gjs
 Requires: gir-repository
@@ -50,15 +51,18 @@ graphical technologies.
 %apply_patches
 
 %build
-export LD_LIBRARY_PATH=%xulrunner_mozappdir
-%configure2_5x --enable-compile-warnings=no \
- --disable-static --disable-schemas-install
+#export LD_LIBRARY_PATH=%xulrunner_mozappdir
+%configure2_5x \
+	--disable-static \
+	--enable-compile-warnings=no \
+	--disable-schemas-install
+
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-%find_lang %name
+%find_lang %{name}
 
 mkdir -p %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
 cp -f %{buildroot}/%{_datadir}/applications/gnome-shell.desktop %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
@@ -66,9 +70,9 @@ cp -f %{buildroot}/%{_datadir}/applications/gnome-shell.desktop %{buildroot}/%{_
 install -m 755 %{SOURCE1} %{buildroot}/%{_datadir}/gnome-shell/
 
 # wmsession session file
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d
-cat << EOF > $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d/11GNOME3
-NAME=GNOME 3 Preview
+mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d
+cat << EOF > %{buildroot}%{_sysconfdir}/X11/wmsession.d/11GNOME3
+NAME=GNOME3 Desktop
 ICON=gnome-logo-icon-transparent.png
 DESC=GNOME Environment
 EXEC=%{_datadir}/gnome-shell/gnome-shell-session
@@ -76,31 +80,19 @@ SCRIPT:
 exec %{_datadir}/gnome-shell/gnome-shell-session
 EOF
 
-
-%clean
-rm -rf %{buildroot}
-
 %define schemas gnome-shell
 
-%if %mdkversion < 200900
-%post
-%post_install_gconf_schemas %schemas
-%endif
-
-%preun
-%preun_uninstall_gconf_schemas %schemas
-
-%files -f %name.lang
-%defattr(-,root,root)
+%files -f %{name}.lang
 %doc README 
-%_sysconfdir/gconf/schemas/gnome-shell.schemas
-%_sysconfdir/X11/wmsession.d/*
-%_bindir/*
-%_libdir/%name
+%{_sysconfdir}/gconf/schemas/gnome-shell.schemas
+%{_sysconfdir}/X11/wmsession.d/*
+%{_bindir}/*
+%{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-perf-helper
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
-%_datadir/applications/%name.desktop
-%_datadir/%name
-%_mandir/man1/%name.1*
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}
+%{_mandir}/man1/%{name}.1*
+
