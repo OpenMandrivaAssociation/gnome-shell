@@ -66,6 +66,7 @@ graphical technologies.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %find_lang %{name}
 
 mkdir -p %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
@@ -92,9 +93,12 @@ EOF
 %{_sysconfdir}/X11/wmsession.d/*
 %{_bindir}/*
 %{_libdir}/%{name}
+%{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
+%{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
+%{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}
