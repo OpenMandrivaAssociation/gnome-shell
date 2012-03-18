@@ -1,12 +1,11 @@
 Summary: Next generation GNOME desktop shell
 Name: gnome-shell
 Version: 3.2.2.1
-Release: 1
+Release: 2
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-Source1: gnome-shell-session
 #Patch0:	gnome-shell-3.1.4-bluetooth-libdir.patch
 
 BuildRequires: intltool
@@ -32,11 +31,14 @@ BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(telepathy-glib)
 BuildRequires: pkgconfig(telepathy-logger-0.2)
 
-Requires: mutter
+Requires: at-spi2-atk
 Requires: gjs
-Requires: gir-repository
 Requires: glxinfo
 Requires: gnome-session
+Requires: gtk+3.0
+Requires: json-glib
+Requires: librsvg
+Requires: mutter
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
@@ -64,43 +66,23 @@ graphical technologies.
 %make LIBS='-lgmodule-2.0'
 
 %install
-rm -rf %{buildroot}
-%makeinstall_std
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %find_lang %{name}
-
-mkdir -p %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
-cp -f %{buildroot}/%{_datadir}/applications/gnome-shell.desktop %{buildroot}/%{_datadir}/gnome-shell/xdg-override/autostart
-
-install -m 755 %{SOURCE1} %{buildroot}/%{_datadir}/gnome-shell/
-
-# wmsession session file
-mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d
-cat << EOF > %{buildroot}%{_sysconfdir}/X11/wmsession.d/11GNOME3
-NAME=GNOME3 Desktop
-ICON=gnome-logo-icon-transparent.png
-DESC=GNOME Environment
-EXEC=%{_datadir}/gnome-shell/gnome-shell-session
-SCRIPT:
-exec %{_datadir}/gnome-shell/gnome-shell-session
-EOF
-
-%define schemas gnome-shell
 
 %files -f %{name}.lang
 %doc README 
 %{_sysconfdir}/gconf/schemas/gnome-shell.schemas
-%{_sysconfdir}/X11/wmsession.d/*
 %{_bindir}/*
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
-%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 
