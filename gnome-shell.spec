@@ -1,7 +1,7 @@
 Summary: Next generation GNOME desktop shell
 Name: gnome-shell
 Version: 3.2.2.1
-Release: 2
+Release: 3
 License: GPLv2+ and LGPLv2+
 Group: Graphical desktop/GNOME
 Url: http://live.gnome.org/GnomeShell
@@ -21,7 +21,6 @@ BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires: pkgconfig(gtk+-3.0)
 BuildRequires: pkgconfig(libcanberra)
-#BuildRequires: pkgconfig(libedataserver-1.2)
 BuildRequires: pkgconfig(libedataserverui-3.0)
 BuildRequires: pkgconfig(libgnome-menu-3.0)
 BuildRequires: pkgconfig(libmutter)
@@ -39,6 +38,29 @@ Requires: gtk+3.0
 Requires: json-glib
 Requires: librsvg
 Requires: mutter
+
+# missing typelib pkgs workaround
+# remove once rpm auto prov/reqs
+Requires: %{_lib}accountsservice-gir1.0
+Requires: %{_lib}caribou-gir1.0
+Requires: %{_lib}clutter-gtk-gir1.0
+Requires: %{_lib}clutter-gir1.0
+Requires: %{_lib}cogl-pango-gir1.0
+Requires: %{_lib}cogl-gir1.0
+Requires: %{_lib}folks-gir0.6
+Requires: %{_lib}gdk_pixbuf-gir2.0
+Requires: %{_lib}gee-gir1.0
+Requires: %{_lib}gjs-gir1.0
+Requires: %{_lib}gmenu-gir3.0
+Requires: %{_lib}gnomekbd-gir3.0
+Requires: %{_lib}jscore-gir3.0
+Requires: %{_lib}json-glib-gir1.0
+Requires: %{_lib}mutter-gir3.0
+Requires: %{_lib}pangocairo-gir1.0
+Requires: %{_lib}pangoft2-gir1.0
+Requires: %{_lib}pango-gir1.0
+Requires: %{_lib}soup-gir2.4
+Requires: %{_lib}telepathy-logger-gir0.2
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
