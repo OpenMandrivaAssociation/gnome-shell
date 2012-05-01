@@ -1,12 +1,17 @@
-Summary: Next generation GNOME desktop shell
-Name: gnome-shell
-Version: 3.2.2.1
-Release: 3
-License: GPLv2+ and LGPLv2+
-Group: Graphical desktop/GNOME
-Url: http://live.gnome.org/GnomeShell
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-#Patch0:	gnome-shell-3.1.4-bluetooth-libdir.patch
+%define url_ver %(echo %{version}|cut -d. -f1,2)
+
+# To make GNOME Shell extensions load, we need to get rid of DT_RUNPATH on /usr/bin/gnome-shell
+# (see glibc bug #13945, GNOME bug #670477, Mageia bug #4523)
+%define _disable_ld_enable_new_dtags 1
+
+Summary:	Next generation GNOME desktop shell
+Name:		gnome-shell
+Version:	3.4.1
+Release:	1
+License:	GPLv2+ and LGPLv2+
+Group:		Graphical desktop/GNOME
+Url:		http://live.gnome.org/GnomeShell
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires: intltool
 BuildRequires: rootcerts
@@ -14,8 +19,10 @@ BuildRequires: polkit-1-devel
 BuildRequires: pkgconfig(clutter-1.0)
 BuildRequires: pkgconfig(dbus-glib-1)
 BuildRequires: pkgconfig(folks)
+BuildRequires: pkgconfig(gcr-3)
 BuildRequires: pkgconfig(gjs-1.0)
-#BuildRequires: pkgconfig(gnome-bluetooth-1.0)
+BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(gnome-bluetooth-1.0)
 BuildRequires: pkgconfig(gnome-desktop-3.0)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
@@ -39,29 +46,6 @@ Requires: json-glib
 Requires: librsvg
 Requires: mutter
 
-# missing typelib pkgs workaround
-# remove once rpm auto prov/reqs
-Requires: %{_lib}accountsservice-gir1.0
-Requires: %{_lib}caribou-gir1.0
-Requires: %{_lib}clutter-gtk-gir1.0
-Requires: %{_lib}clutter-gir1.0
-Requires: %{_lib}cogl-pango-gir1.0
-Requires: %{_lib}cogl-gir1.0
-Requires: %{_lib}folks-gir0.6
-Requires: %{_lib}gdk_pixbuf-gir2.0
-Requires: %{_lib}gee-gir1.0
-Requires: %{_lib}gjs-gir1.0
-Requires: %{_lib}gmenu-gir3.0
-Requires: %{_lib}gnomekbd-gir3.0
-Requires: %{_lib}jscore-gir3.0
-Requires: %{_lib}json-glib-gir1.0
-Requires: %{_lib}mutter-gir3.0
-Requires: %{_lib}pangocairo-gir1.0
-Requires: %{_lib}pangoft2-gir1.0
-Requires: %{_lib}pango-gir1.0
-Requires: %{_lib}soup-gir2.4
-Requires: %{_lib}telepathy-logger-gir0.2
-
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
 particular, it offers new paradigms for launching applications,
@@ -73,13 +57,20 @@ by the GNOME Panel and by the window manager in previous versions of
 GNOME. The GNOME Shell has rich visual effects enabled by new
 graphical technologies.
 
+%package docs
+Summary:        Documentation for %{name}
+Group:          Books/Computer books
+BuildArch:      noarch
+
+%description docs
+This package contains the documentation for %{name}.
+
 %prep
 %setup -q
 %apply_patches
 #autoreconf
 
 %build
-#export LD_LIBRARY_PATH=%{_libdir}/gnome-bluetooth
 %configure2_5x \
 	--disable-static \
 	--enable-compile-warnings=no \
@@ -102,9 +93,16 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/gnome-shell-extension-prefs.desktop
+%{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+%{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
+
+%files docs
+%{_datadir}/gtk-doc/html/shell
+%{_datadir}/gtk-doc/html/st
 
