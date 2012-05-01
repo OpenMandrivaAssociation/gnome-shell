@@ -74,19 +74,17 @@ This package contains the documentation for %{name}.
 %build
 %configure2_5x \
 	--disable-static \
-	--enable-compile-warnings=no \
-	--disable-schemas-install
+	--enable-compile-warnings=no
 
 %make LIBS='-lgmodule-2.0'
 
 %install
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
+%makeinstall_std
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %find_lang %{name}
 
 %files -f %{name}.lang
 %doc README 
-%{_sysconfdir}/gconf/schemas/gnome-shell.schemas
 %{_bindir}/*
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
