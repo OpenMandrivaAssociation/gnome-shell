@@ -36,6 +36,7 @@ BuildRequires: pkgconfig(libnm-util)
 BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(telepathy-glib)
 BuildRequires: pkgconfig(telepathy-logger-0.2)
+BuildConflicts: libevolution-data-server2-devel
 
 Requires: at-spi2-atk
 Requires: gjs
