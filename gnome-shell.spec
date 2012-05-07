@@ -7,7 +7,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.4.1
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -46,6 +46,30 @@ Requires: gtk+3.0
 Requires: json-glib
 Requires: librsvg
 Requires: mutter
+
+# md until js & python typelib autoreqs works
+Requires: typelib(AccountsService)
+Requires: typelib(Caribou)
+Requires: typelib(ClutterX11) 
+Requires: typelib(DBusGLib)
+Requires: typelib(Folks)
+Requires: typelib(Gcr)
+Requires: typelib(Gkbd)
+Requires: typelib(GDesktopEnums)
+Requires: typelib(GdmGreeter)
+Requires: typelib(Gee)
+Requires: typelib(GMenu)
+Requires: typelib(GnomeBluetoothApplet)
+Requires: typelib(Meta)
+Requires: typelib(NMClient)
+Requires: typelib(NetworkManager)
+Requires: typelib(Polkit)
+Requires: typelib(Soup)
+Requires: typelib(TelepathyGLib)
+Requires: typelib(TelepathyLogger)
+Requires: typelib(UPowerGlib)
+# check specifically if ever reqd by some pkg
+Requires: typelib(GjsDBus)
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
