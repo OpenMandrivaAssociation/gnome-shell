@@ -1,5 +1,3 @@
-%define url_ver %(echo %{version}|cut -d. -f1,2)
-
 # To make GNOME Shell extensions load, we need to get rid of DT_RUNPATH on /usr/bin/gnome-shell
 # (see glibc bug #13945, GNOME bug #670477, Mageia bug #4523)
 %define _disable_ld_enable_new_dtags 1
@@ -11,7 +9,7 @@ Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{name}-%{version}.tar.xz
 
 BuildRequires: intltool
 BuildRequires: rootcerts
@@ -48,28 +46,28 @@ Requires: librsvg
 Requires: mutter
 
 # md until js & python typelib autoreqs works
-Requires: typelib(AccountsService)
-Requires: typelib(Caribou)
-Requires: typelib(ClutterX11) 
-Requires: typelib(DBusGLib)
-Requires: typelib(Folks)
-Requires: typelib(Gcr)
-Requires: typelib(Gkbd)
-Requires: typelib(GDesktopEnums)
-Requires: typelib(GdmGreeter)
-Requires: typelib(Gee)
-Requires: typelib(GMenu)
-Requires: typelib(GnomeBluetoothApplet)
-Requires: typelib(Meta)
-Requires: typelib(NMClient)
-Requires: typelib(NetworkManager)
-Requires: typelib(Polkit)
-Requires: typelib(Soup)
-Requires: typelib(TelepathyGLib)
-Requires: typelib(TelepathyLogger)
-Requires: typelib(UPowerGlib)
+#Requires: typelib(AccountsService)
+#Requires: typelib(Caribou)
+#Requires: typelib(ClutterX11) 
+#Requires: typelib(DBusGLib)
+#Requires: typelib(Folks)
+#Requires: typelib(Gcr)
+#Requires: typelib(Gkbd)
+#Requires: typelib(GDesktopEnums)
+#Requires: typelib(GdmGreeter)
+#Requires: typelib(Gee)
+#Requires: typelib(GMenu)
+#Requires: typelib(GnomeBluetoothApplet)
+#Requires: typelib(Meta)
+#Requires: typelib(NMClient)
+#Requires: typelib(NetworkManager)
+#Requires: typelib(Polkit)
+#Requires: typelib(Soup)
+#Requires: typelib(TelepathyGLib)
+#Requires: typelib(TelepathyLogger)
+#Requires: typelib(UPowerGlib)
 # check specifically if ever reqd by some pkg
-Requires: typelib(GjsDBus)
+#Requires: typelib(GjsDBus)
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
