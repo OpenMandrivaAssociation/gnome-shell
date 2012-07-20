@@ -91,7 +91,6 @@ This package contains the documentation for %{name}.
 %prep
 %setup -q
 %apply_patches
-#autoreconf
 
 %build
 %configure2_5x \
@@ -119,6 +118,7 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
+%{_datadir}/glib-2.0/schemas/org.gnome.shell.evolution.calendar.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
