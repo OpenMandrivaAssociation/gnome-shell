@@ -1,0 +1,12 @@
+diff -urN gnome-shell-3.6.0.orig/data/org.gnome.shell.gschema.xml.in.in gnome-shell-3.6.0/data/org.gnome.shell.gschema.xml.in.in
+--- gnome-shell-3.6.0.orig/data/org.gnome.shell.gschema.xml.in.in	2012-10-15 16:38:10.000000000 +0400
++++ gnome-shell-3.6.0/data/org.gnome.shell.gschema.xml.in.in	2012-10-15 16:38:55.000000000 +0400
+@@ -32,7 +32,7 @@
+       </_description>
+     </key>
+     <key name="favorite-apps" type="as">
+-      <default>[ 'epiphany.desktop', 'evolution.desktop', 'empathy.desktop', 'rhythmbox.desktop', 'shotwell.desktop', 'libreoffice-writer.desktop', 'nautilus.desktop', 'gnome-documents.desktop' ]</default>
++      <default>[ 'chromium-browser.desktop', 'evolution.desktop', 'empathy.desktop', 'rhythmbox.desktop', 'shotwell.desktop', 'libreoffice-writer.desktop', 'nautilus.desktop', 'gnome-documents.desktop', 'rpmdrake.desktop' ]</default>
+       <_summary>List of desktop file IDs for favorite applications</_summary>
+       <_description>
+         The applications corresponding to these identifiers
