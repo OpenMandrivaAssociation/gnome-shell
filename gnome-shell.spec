@@ -4,12 +4,12 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.6.2
-Release:	2
+Version:	3.7.2
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/3.6/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/3.7/%{name}-%{version}.tar.xz
 Patch1:		gnome-shell-3.6.2-new-favorites.patch
 
 BuildRequires: intltool >= 0.40
