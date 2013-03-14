@@ -4,13 +4,14 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.7.2
-Release:	1
+Version:	3.6.2
+Release:	3
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/3.7/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/3.6/%{name}-%{version}.tar.xz
 Patch1:		gnome-shell-3.6.2-new-favorites.patch
+Patch2:		0001-MessageTray-fix-notification-height-expansion.patch
 
 BuildRequires: intltool >= 0.40
 BuildRequires: rootcerts, gtk-doc
