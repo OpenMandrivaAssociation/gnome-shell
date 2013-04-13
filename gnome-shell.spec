@@ -97,7 +97,7 @@ This package contains the documentation for %{name}.
 	--disable-static \
 	--enable-compile-warnings=no
 
-%make LIBS='-lgmodule-2.0'
+%make LIBS='-lgmodule-2.0' CFLAGS='-DCAMEL_IMAPX_SERVER_H'
 
 %install
 %makeinstall_std
