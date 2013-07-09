@@ -18,6 +18,7 @@ BuildRequires:	gtk-doc
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
 BuildRequires:	xsltproc
+BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(folks)
@@ -97,6 +98,9 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/%{name}
