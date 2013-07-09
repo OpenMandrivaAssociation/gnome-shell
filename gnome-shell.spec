@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
-BuildRequires:	pkgconfig(gjs-1.0) >= 1.34
+BuildRequires:	pkgconfig(gjs-1.0) >= 1.35.4
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
@@ -33,6 +33,7 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
 BuildRequires:	pkgconfig(libmutter) >= %{version}
 BuildRequires:	pkgconfig(libnm-glib)
+BuildRequires:	pkgconfig(libnm-gtk)
 BuildRequires:	pkgconfig(libnm-util)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(polkit-gobject-1)
