@@ -13,7 +13,6 @@ Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 Patch1:		gnome-shell-3.6.2-new-favorites.patch
-Patch2:		0001-MessageTray-fix-notification-height-expansion.patch
 
 BuildRequires:	gtk-doc
 BuildRequires:	intltool >= 0.40
