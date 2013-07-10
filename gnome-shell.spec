@@ -31,6 +31,7 @@ BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-0.10)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcanberra)
+BuildRequires:	pkgconfig(libecal-1.2)
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
 BuildRequires:	pkgconfig(libmutter) >= %{version}
 BuildRequires:	pkgconfig(libnm-glib)
