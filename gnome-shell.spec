@@ -7,7 +7,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.8.3
-Release:	5
+Release:	6
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
