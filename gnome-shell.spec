@@ -6,13 +6,12 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.8.3
-Release:	7
+Version:	3.14.1
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
-Patch1:		gnome-shell-3.6.2-new-favorites.patch
 
 BuildRequires:	gtk-doc
 BuildRequires:	intltool >= 0.40
@@ -21,7 +20,6 @@ BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(gjs-1.0) >= 1.35.4
 BuildRequires:	pkgconfig(gl)
@@ -75,8 +73,7 @@ This package contains the documentation for %{name}.
 %apply_patches
 
 %build
-%configure2_5x \
-	--disable-static \
+%configure \
 	--enable-compile-warnings=no
 
 %make LIBS='-lgmodule-2.0' CFLAGS='-UG_DISABLE_DEPRECATED '
@@ -93,9 +90,13 @@ This package contains the documentation for %{name}.
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
+%{_libexecdir}/gnome-shell-portal-helper
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
+%{_datadir}/applications/gnome-shell-wayland.desktop
+%{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
+%{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
