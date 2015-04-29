@@ -6,7 +6,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.14.1
+Version:	 3.16.1
 Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -83,7 +83,7 @@ This package contains the documentation for %{name}.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README 
+%doc README
 %{_bindir}/*
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
