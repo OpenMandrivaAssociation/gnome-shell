@@ -107,7 +107,6 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
-%{_datadir}/gnome-control-center/keybindings/50-gnome-shell-system.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 
