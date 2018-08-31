@@ -48,7 +48,7 @@ BuildRequires:  pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
 BuildRequires:  pkgconfig(mutter-clutter-2)
-BuildRequires:  pkgconfig(libcanberra)
+BuildRequires:  pkgconfig(libcanberra-gtk3)
 
 
 Requires:	at-spi2-atk
