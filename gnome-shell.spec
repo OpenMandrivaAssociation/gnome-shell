@@ -49,6 +49,7 @@ BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
 BuildRequires:  pkgconfig(mutter-clutter-2)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
+BuildRequires:  pkgconfig(libstartup-notification-1.0)
 
 
 Requires:	at-spi2-atk
