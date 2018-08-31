@@ -47,6 +47,7 @@ BuildRequires:  pkgconfig(ibus-1.0)
 BuildRequires:  pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
+BuildRequires:  pkgconfig(mutter-clutter-2)
 
 
 Requires:	at-spi2-atk
