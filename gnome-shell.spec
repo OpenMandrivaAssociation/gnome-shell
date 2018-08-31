@@ -42,6 +42,12 @@ BuildRequires:	pkgconfig(polkit-gobject-1)
 BuildRequires:	pkgconfig(telepathy-glib)
 BuildRequires:	pkgconfig(telepathy-logger-0.2)
 
+BuildRequires:  meson
+BuildRequires:  pkgconfig(ibus-1.0)
+BuildRequires:  pkgconfig(gjs-1.0)
+BuildRequires:  pkgconfig(python3)
+
+
 Requires:	at-spi2-atk
 Requires:	gjs
 Requires:	glxinfo
@@ -75,13 +81,12 @@ This package contains the documentation for %{name}.
 %apply_patches
 
 %build
-%configure \
-	--enable-compile-warnings=no
-
-%make LIBS='-lgmodule-2.0' CFLAGS='-UG_DISABLE_DEPRECATED '
+%meson -Denable-documentation=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
+
 %find_lang %{name}
 
 %files -f %{name}.lang
