@@ -32,7 +32,7 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-1.2)
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:	pkgconfig(libmutter) >= %{url_ver}.0
+BuildRequires:	pkgconfig(libmutter)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-gtk)
