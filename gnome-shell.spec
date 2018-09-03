@@ -51,6 +51,7 @@ BuildRequires:  pkgconfig(mutter-clutter-2)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libnm)
+BuildRequires:  sassc
 
 Requires:	at-spi2-atk
 Requires:	gjs
