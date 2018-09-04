@@ -103,10 +103,10 @@ This package contains the documentation for %{name}.
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/org.gnome.Shell.desktop
 %{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
-%{_datadir}/applications/gnome-shell-wayland.desktop
+#{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
