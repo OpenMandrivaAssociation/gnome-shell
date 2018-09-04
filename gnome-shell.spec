@@ -120,7 +120,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 
-%files docs
-%{_datadir}/gtk-doc/html/shell
-%{_datadir}/gtk-doc/html/st
+#files docs
+#{_datadir}/gtk-doc/html/shell
+#{_datadir}/gtk-doc/html/st
 
