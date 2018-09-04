@@ -117,8 +117,11 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
+%{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
+%{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 
 #files docs
 #{_datadir}/gtk-doc/html/shell
