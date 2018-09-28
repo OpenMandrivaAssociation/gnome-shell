@@ -96,7 +96,7 @@ This package contains the documentation for %{name}.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README
+%doc README.md NEWS HACKING.md
 %{_bindir}/*
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
