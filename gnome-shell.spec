@@ -98,12 +98,14 @@ This package contains the documentation for %{name}.
 %files -f %{name}.lang
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
+%{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
+%{_libexecdir}/gnome-shell-overrides-migration.sh
 %{_datadir}/applications/org.gnome.Shell.desktop
 %{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
@@ -118,11 +120,15 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
+%{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
+%{_userunitdir}/gnome-shell-wayland.target
+%{_userunitdir}/gnome-shell-x11.target
+%{_userunitdir}/gnome-shell.service
 
 #files docs
 #{_datadir}/gtk-doc/html/shell
