@@ -7,8 +7,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.28.3
-Release:	2
+Version:	3.30.0
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -32,7 +32,7 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-1.2)
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-2)
+BuildRequires:  pkgconfig(libmutter-3)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-gtk)
@@ -47,11 +47,12 @@ BuildRequires:  pkgconfig(ibus-1.0)
 BuildRequires:  pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
-BuildRequires:  pkgconfig(mutter-clutter-2)
+#BuildRequires:  pkgconfig(mutter-clutter-2)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libnm)
 BuildRequires:  sassc
+BuildRequires:  pkgconfig(mutter-clutter-3)
 
 Requires:	at-spi2-atk
 Requires:	gjs
@@ -95,14 +96,16 @@ This package contains the documentation for %{name}.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README
+%doc README.md NEWS HACKING.md
 %{_bindir}/*
+%{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
+%{_libexecdir}/gnome-shell-overrides-migration.sh
 %{_datadir}/applications/org.gnome.Shell.desktop
 %{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
@@ -117,11 +120,15 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
+%{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
+%{_userunitdir}/gnome-shell-wayland.target
+%{_userunitdir}/gnome-shell-x11.target
+%{_userunitdir}/gnome-shell.service
 
 #files docs
 #{_datadir}/gtk-doc/html/shell
