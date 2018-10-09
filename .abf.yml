@@ -7,3 +7,4 @@ removed_sources:
 sources:
   gnome-shell-3.28.3.tar.xz: 767bea7e4715fb951c74a02c26d4b4d8ddecaaaf
   gnome-shell-3.30.0.tar.xz: 7220d3eb6f5534f55be467f65fedaad08ad72ef7
+  gnome-shell-3.30.1.tar.xz: 19695242ccd39c8c6b938c8404a80c71528d3a1f
