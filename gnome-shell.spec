@@ -141,7 +141,7 @@ This package contains the documentation for %{name}.
 %{_bindir}/*
 %{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
-%{_libdir}/mozilla/plugins/*.so
+#{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
