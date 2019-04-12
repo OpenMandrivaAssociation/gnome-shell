@@ -3,11 +3,11 @@
 # To make GNOME Shell extensions load, we need to get rid of DT_RUNPATH on /usr/bin/gnome-shell
 # (see glibc bug #13945, GNOME bug #670477, Mageia bug #4523)
 %define _disable_ld_enable_new_dtags 1
-%define debug_package %{nil}
+#define debug_package %{nil}
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.30.2
+Version:	3.32.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -20,27 +20,50 @@ BuildRequires:	rootcerts
 BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
+BuildRequires:	pkgconfig(clutter-glx-1.0) >= 1.7.5
+BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
+BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gjs-1.0) >= 1.35.4
+BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
+BuildRequires:	pkgconfig(gnome-keyring-1)
+# NOT READY YET
+#BuildRequires:	pkgconfig(gnome-keybindings)
+BuildRequires:	pkgconfig(gobject-2.0)
+BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 1.45.3
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
+BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.11.92
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gtk-doc)
+BuildRequires:	pkgconfig(ibus-1.0)
 BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-1.2)
+BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-3)
+BuildRequires:  pkgconfig(libmutter-4)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-gtk)
 BuildRequires:	pkgconfig(libnm-util)
 BuildRequires:	pkgconfig(libpulse)
+BuildRequires:	pkgconfig(libpulse-mainloop-glib)
+BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(polkit-agent-1) >= 0.100
 BuildRequires:	pkgconfig(polkit-gobject-1)
+BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(telepathy-glib)
 BuildRequires:	pkgconfig(telepathy-logger-0.2)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xfixes)
+BuildRequires:	gettext-devel
 
 BuildRequires:  meson
 BuildRequires:  pkgconfig(ibus-1.0)
@@ -52,12 +75,27 @@ BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libnm)
 BuildRequires:  sassc
-BuildRequires:  pkgconfig(mutter-clutter-3)
+#BuildRequires:  pkgconfig(mutter-clutter-3)
 
 Requires:	at-spi2-atk
 Requires:	gjs
 Requires:	glxinfo
 Requires:	gnome-session
+Requires:	adwaita-icon-theme
+Requires:	gnome-settings-daemon
+Requires:	gsettings-desktop-schemas
+Requires:	packagekit-gtk3-module
+Requires:	telepathy-mission-control
+Requires:	gnome-control-center
+Requires:	libgnomekbd-common
+# NOT READY YET
+#Requires:	chrome-gnome-shell
+Provides:	virtual-notification-daemon
+Provides:	polkit-agent
+Requires:	typelib(GcrUi)
+Requires:	gdm
+Requires:	unzip
+
 Requires:	gtk+3.0
 Requires:	json-glib
 Requires:	librsvg
@@ -84,7 +122,7 @@ This package contains the documentation for %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %meson -Denable-documentation=true
@@ -95,12 +133,15 @@ This package contains the documentation for %{name}.
 
 %find_lang %{name}
 
+%post
+%systemd_user_post %{systemd_units}
+
 %files -f %{name}.lang
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
 %{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
-%{_libdir}/mozilla/plugins/*.so
+#{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
@@ -115,8 +156,11 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
