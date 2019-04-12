@@ -3,7 +3,7 @@
 # To make GNOME Shell extensions load, we need to get rid of DT_RUNPATH on /usr/bin/gnome-shell
 # (see glibc bug #13945, GNOME bug #670477, Mageia bug #4523)
 %define _disable_ld_enable_new_dtags 1
-#%define debug_package %{nil}
+#define debug_package %{nil}
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
