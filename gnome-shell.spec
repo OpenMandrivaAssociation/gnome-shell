@@ -7,7 +7,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.32.0
+Version:	3.32.1
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -70,12 +70,10 @@ BuildRequires:  pkgconfig(ibus-1.0)
 BuildRequires:  pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
-#BuildRequires:  pkgconfig(mutter-clutter-2)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libnm)
 BuildRequires:  sassc
-#BuildRequires:  pkgconfig(mutter-clutter-3)
 
 Requires:	at-spi2-atk
 Requires:	gjs
