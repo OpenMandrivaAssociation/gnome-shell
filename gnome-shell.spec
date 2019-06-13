@@ -100,7 +100,6 @@ Requires:	json-glib
 Requires:	librsvg
 Requires:	mutter
 Requires:	pipewire
-Requires:	
 
 # TYPELIBS #
 # Looks like typelibs generator is broken for Cooker, so all needed gir packages should be added below
