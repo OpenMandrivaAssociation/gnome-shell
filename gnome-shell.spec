@@ -92,7 +92,6 @@ Requires:	libgnomekbd-common
 #Requires:	chrome-gnome-shell
 Provides:	virtual-notification-daemon
 Provides:	polkit-agent
-Requires:	typelib(GcrUi)
 Requires:	gdm
 Requires:	unzip
 
@@ -100,6 +99,57 @@ Requires:	gtk+3.0
 Requires:	json-glib
 Requires:	librsvg
 Requires:	mutter
+Requires:	pipewire
+Requires:	
+
+# TYPELIBS #
+# Looks like typelibs generator is broken for Cooker, so all needed gir packages should be added below
+
+Requires:	typelib(AccountsService)
+Requires:	typelib(Atk)
+Requires:	typelib(Atspi)
+Requires:	typelib(Cally)
+Requires:	typelib(Clutter)
+Requires:	typelib(ClutterX11)
+Requires:	typelib(Cogl)
+Requires:	typelib(CoglPango)
+Requires:	typelib(GDesktopEnums)
+Requires:	typelib(GL)
+Requires:	typelib(GLib)
+Requires:	typelib(GModule)
+Requires:	typelib(GObject)
+Requires:	typelib(GWeather)
+Requires:	typelib(Gck)
+Requires:	typelib(Gcr)
+Requires:	typelib(GcrUi)
+Requires:	typelib(Gdk)
+Requires:	typelib(GdkPixbuf)
+Requires:	typelib(Gdm)
+Requires:	typelib(Geoclue)
+Requires:	typelib(Gio)
+Requires:	typelib(GnomeBluetooth)
+Requires:	typelib(GnomeDesktop)
+Requires:	typelib(Gtk)
+Requires:	typelib(Gvc)
+Requires:	typelib(IBus)
+Requires:	typelib(Json)
+Requires:	typelib(Meta)
+Requires:	typelib(NM)
+Requires:	typelib(NMA)
+Requires:	typelib(Pango)
+Requires:	typelib(PangoCairo)
+Requires:	typelib(Polkit)
+Requires:	typelib(PolkitAgent)
+Requires: typelib(Rsvg)
+Requires:	typelib(Shell)
+Requires:	typelib(Soup)
+Requires:	typelib(St)
+Requires:	typelib(TelepathyGLib)
+Requires:	typelib(TelepathyLogger)
+Requires:	typelib(UPowerGlib)
+Requires:	typelib(cairo)
+Requires:	typelib(xfixes)
+Requires:	typelib(xlib)
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
