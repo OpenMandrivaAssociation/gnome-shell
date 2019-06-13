@@ -5,9 +5,11 @@
 %define _disable_ld_enable_new_dtags 1
 #define debug_package %{nil}
 
+%global systemd_units gnome-shell.service
+
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.32.1
+Version:	3.32.2
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -139,7 +141,6 @@ This package contains the documentation for %{name}.
 %{_bindir}/*
 %{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
-#{_libdir}/mozilla/plugins/*.so
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
