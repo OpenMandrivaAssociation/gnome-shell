@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.32.2
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -88,12 +88,12 @@ Requires:	packagekit-gtk3-module
 Requires:	telepathy-mission-control
 Requires:	gnome-control-center
 Requires:	libgnomekbd-common
-# NOT READY YET
-#Requires:	chrome-gnome-shell
-Provides:	virtual-notification-daemon
-Provides:	polkit-agent
+Requires:	chrome-gnome-shell
 Requires:	gdm
 Requires:	unzip
+
+Provides:	virtual-notification-daemon
+Provides:	polkit-agent
 
 Requires:	gtk+3.0
 Requires:	json-glib
@@ -103,6 +103,7 @@ Requires:	pipewire
 
 # TYPELIBS #
 # Looks like typelibs generator is broken for Cooker, so all needed gir packages should be added below
+# omv bug https://issues.openmandriva.org/show_bug.cgi?id=2534
 
 Requires:	typelib(AccountsService)
 Requires:	typelib(Atk)
@@ -112,6 +113,7 @@ Requires:	typelib(Clutter)
 Requires:	typelib(ClutterX11)
 Requires:	typelib(Cogl)
 Requires:	typelib(CoglPango)
+Requires: typelib(DBus)
 Requires:	typelib(GDesktopEnums)
 Requires:	typelib(GL)
 Requires:	typelib(GLib)
@@ -123,12 +125,14 @@ Requires:	typelib(Gcr)
 Requires:	typelib(GcrUi)
 Requires:	typelib(Gdk)
 Requires:	typelib(GdkPixbuf)
+Requires: typelib(GdPrivate)
 Requires:	typelib(Gdm)
 Requires:	typelib(Geoclue)
 Requires:	typelib(Gio)
 Requires:	typelib(GnomeBluetooth)
 Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
+Requires: typelib(GtkClutter)
 Requires:	typelib(Gvc)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
