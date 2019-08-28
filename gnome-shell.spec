@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.32.2
-Release:	3
+Release:	4
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -90,6 +90,7 @@ Requires:	gnome-control-center
 Requires:	libgnomekbd-common
 # Optional 
 Recommends:	chrome-gnome-shell
+Recommends: gnome-tweaks
 Requires:	gdm
 Requires:	unzip
 
