@@ -9,13 +9,14 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.32.2
-Release:	4
+Version:	3.34.0
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires: a2x
 BuildRequires:	gtk-doc
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
@@ -24,6 +25,7 @@ BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(clutter-glx-1.0) >= 1.7.5
 BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
+BuildRequires: pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
@@ -32,6 +34,7 @@ BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gjs-1.0) >= 1.35.4
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
+BuildRequires: pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
@@ -46,10 +49,11 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(ibus-1.0)
 BuildRequires:	pkgconfig(libcanberra)
-BuildRequires:	pkgconfig(libecal-1.2)
+BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-4)
+BuildRequires: pkgconfig(libmutter-5)
+BuildRequires: pkgconfig(mutter-clutter-5)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-gtk)
@@ -206,6 +210,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
+%{_datadir}/bash-completion/completions/gnome-extensions
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
@@ -224,11 +229,16 @@ This package contains the documentation for %{name}.
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/gnome-extensions.1*
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/gnome-shell-wayland.target
 %{_userunitdir}/gnome-shell-x11.target
-%{_userunitdir}/gnome-shell.service
+#{_userunitdir}/gnome-shell.service
 
+%{_userunitdir}/gnome-shell-disable-extensions.service
+%{_userunitdir}/gnome-shell-wayland.service
+%{_userunitdir}/gnome-shell-x11.service
+   
 #files docs
 #{_datadir}/gtk-doc/html/shell
 #{_datadir}/gtk-doc/html/st
