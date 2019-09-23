@@ -46,7 +46,7 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(ibus-1.0)
 BuildRequires:	pkgconfig(libcanberra)
-BuildRequires:	pkgconfig(libecal-1.2)
+BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
 BuildRequires:  pkgconfig(libmutter-5)
@@ -229,6 +229,10 @@ This package contains the documentation for %{name}.
 %{_userunitdir}/gnome-shell-x11.target
 %{_userunitdir}/gnome-shell.service
 
+%{_userunitdir}/gnome-shell-disable-extensions.service
+%{_userunitdir}/gnome-shell-wayland.service
+%{_userunitdir}/gnome-shell-x11.service
+   
 #files docs
 #{_datadir}/gtk-doc/html/shell
 #{_datadir}/gtk-doc/html/st
