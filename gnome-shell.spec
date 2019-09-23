@@ -16,6 +16,7 @@ Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires: a2x
 BuildRequires:	gtk-doc
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
@@ -24,6 +25,7 @@ BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(clutter-glx-1.0) >= 1.7.5
 BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
+BuildRequires: pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
