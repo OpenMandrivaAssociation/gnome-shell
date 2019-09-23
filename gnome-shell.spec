@@ -52,7 +52,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-5)
+BuildRequires: pkgconfig(libmutter-5)
+BuildRequires: pkgconfig(mutter-clutter-5)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-gtk)
@@ -209,6 +210,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
+%{_datadir}/bash-completion/completions/gnome-extensions
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
@@ -227,6 +229,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/gnome-extensions.1*
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/gnome-shell-wayland.target
 %{_userunitdir}/gnome-shell-x11.target
