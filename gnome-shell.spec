@@ -230,7 +230,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/gnome-shell-wayland.target
 %{_userunitdir}/gnome-shell-x11.target
-%{_userunitdir}/gnome-shell.service
+#{_userunitdir}/gnome-shell.service
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
 %{_userunitdir}/gnome-shell-wayland.service
