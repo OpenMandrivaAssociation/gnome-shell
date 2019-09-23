@@ -32,6 +32,7 @@ BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gjs-1.0) >= 1.35.4
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
+BuildRequires: pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
