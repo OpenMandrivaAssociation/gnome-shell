@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.34.0
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -55,9 +55,6 @@ BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
 BuildRequires: pkgconfig(libmutter-5)
 BuildRequires: pkgconfig(mutter-clutter-5)
 BuildRequires:	pkgconfig(libsystemd)
-BuildRequires:	pkgconfig(libnm-glib)
-BuildRequires:	pkgconfig(libnm-gtk)
-BuildRequires:	pkgconfig(libnm-util)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libsoup-2.4)
@@ -119,7 +116,7 @@ Requires:	typelib(Clutter)
 Requires:	typelib(ClutterX11)
 Requires:	typelib(Cogl)
 Requires:	typelib(CoglPango)
-Requires: typelib(DBus)
+Requires:   typelib(DBus)
 Requires:	typelib(GDesktopEnums)
 Requires:	typelib(GL)
 Requires:	typelib(GLib)
@@ -131,14 +128,14 @@ Requires:	typelib(Gcr)
 Requires:	typelib(GcrUi)
 Requires:	typelib(Gdk)
 Requires:	typelib(GdkPixbuf)
-Requires: typelib(GdPrivate)
+Requires:   typelib(GdPrivate)
 Requires:	typelib(Gdm)
 Requires:	typelib(Geoclue)
 Requires:	typelib(Gio)
 Requires:	typelib(GnomeBluetooth)
 Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
-Requires: typelib(GtkClutter)
+Requires:   typelib(GtkClutter)
 Requires:	typelib(Gvc)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
@@ -149,7 +146,7 @@ Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
 Requires:	typelib(Polkit)
 Requires:	typelib(PolkitAgent)
-Requires: typelib(Rsvg)
+Requires:   typelib(Rsvg)
 Requires:	typelib(Shell)
 Requires:	typelib(Soup)
 Requires:	typelib(St)
