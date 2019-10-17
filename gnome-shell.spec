@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.34.1
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -128,7 +128,7 @@ Requires:	typelib(Gcr)
 Requires:	typelib(GcrUi)
 Requires:	typelib(Gdk)
 Requires:	typelib(GdkPixbuf)
-Requires:   typelib(GdPrivate)
+#Requires:   typelib(GdPrivate)
 Requires:	typelib(Gdm)
 Requires:	typelib(Geoclue)
 Requires:	typelib(Gio)
