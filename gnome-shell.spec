@@ -9,8 +9,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.34.1
-Release:	2
+Version:	3.34.2
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -77,6 +77,7 @@ BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
 BuildRequires:	pkgconfig(libnm)
 BuildRequires:  sassc
+BuildRequires:  egl-devel
 
 Requires:	at-spi2-atk
 Requires:	gjs
