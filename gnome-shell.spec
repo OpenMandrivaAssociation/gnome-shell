@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.34.2
+Version:	3.34.3
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -137,7 +137,7 @@ Requires:	typelib(GnomeBluetooth)
 Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
 Requires:   typelib(GtkClutter)
-Requires:	typelib(Gvc)
+#Requires:	typelib(Gvc)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
 Requires:	typelib(Meta)
@@ -148,9 +148,9 @@ Requires:	typelib(PangoCairo)
 Requires:	typelib(Polkit)
 Requires:	typelib(PolkitAgent)
 Requires:   typelib(Rsvg)
-Requires:	typelib(Shell)
+#Requires:	typelib(Shell)
 Requires:	typelib(Soup)
-Requires:	typelib(St)
+#Requires:	typelib(St)
 Requires:	typelib(TelepathyGLib)
 Requires:	typelib(TelepathyLogger)
 Requires:	typelib(UPowerGlib)
