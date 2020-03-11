@@ -52,8 +52,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires: pkgconfig(libmutter-5)
-BuildRequires: pkgconfig(mutter-clutter-5)
+BuildRequires: pkgconfig(libmutter-6)
+BuildRequires: pkgconfig(mutter-clutter-6)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
