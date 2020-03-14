@@ -237,6 +237,7 @@ This package contains the documentation for %{name}.
 %{_userunitdir}/gnome-shell-x11.target
 #{_userunitdir}/gnome-shell.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
+%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
 %{_userunitdir}/gnome-shell-wayland.service
