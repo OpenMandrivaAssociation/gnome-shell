@@ -15,6 +15,10 @@ License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1080
+Patch0001:      0001-ibusManager_fix-ibus-launch-error-because-of-wrong-method.patch
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1084
+Patch0002:      0002-St_Ensure-to-update-entry-hint-visibility-with-IM-preedit.patch
 
 BuildRequires: a2x
 BuildRequires:	gtk-doc
@@ -75,7 +79,7 @@ BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
-BuildRequires:	pkgconfig(libnm)
+BuildRequires:	 pkgconfig(libnm)
 BuildRequires:  sassc
 BuildRequires:  egl-devel
 
@@ -205,7 +209,7 @@ This package contains the documentation for %{name}.
 %{_libexecdir}/gnome-shell-overrides-migration.sh
 %{_datadir}/applications/org.gnome.Shell.desktop
 %{_datadir}/applications/evolution-calendar.desktop
-%{_datadir}/applications/gnome-shell-extension-prefs.desktop
+%{_datadir}/applications/org.gnome.Extensions.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %{_datadir}/bash-completion/completions/gnome-extensions
@@ -232,6 +236,7 @@ This package contains the documentation for %{name}.
 %{_userunitdir}/gnome-shell-wayland.target
 %{_userunitdir}/gnome-shell-x11.target
 #{_userunitdir}/gnome-shell.service
+%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
 %{_userunitdir}/gnome-shell-wayland.service
