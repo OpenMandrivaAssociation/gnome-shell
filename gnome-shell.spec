@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	3.36.0
-Release:	1
+Release:	3
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -142,6 +142,7 @@ Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
 Requires:   typelib(GtkClutter)
 #Requires:	typelib(Gvc)
+Requires:   typelib(Graphene)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
 #Requires:	typelib(Meta)
