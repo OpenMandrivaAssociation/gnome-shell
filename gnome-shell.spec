@@ -35,7 +35,7 @@ BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
-BuildRequires:	pkgconfig(gjs-1.0) = 1.64.0-2
+BuildRequires:	pkgconfig(gjs-1.0) >= 1.64.0-2
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires: pkgconfig(gnome-autoar-0)
