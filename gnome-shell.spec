@@ -214,6 +214,9 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+%{_datadir}/dbus-1/services/org.gnome.Extensions.service
+%{_datadir}/dbus-1/services/org.gnome.Shell.Extensions.service
+%{_datadir}/dbus-1/services/org.gnome.Shell.Notifications.service
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
@@ -235,6 +238,7 @@ This package contains the documentation for %{name}.
 #{_userunitdir}/gnome-shell.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
+%{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
 %{_userunitdir}/gnome-shell-wayland.service
