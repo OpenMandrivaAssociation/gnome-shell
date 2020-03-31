@@ -9,19 +9,16 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.36.0
-Release:	4
+Version:	3.36.1
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1080
-Patch0001:      0001-ibusManager_fix-ibus-launch-error-because-of-wrong-method.patch
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1084
-Patch0002:      0002-St_Ensure-to-update-entry-hint-visibility-with-IM-preedit.patch
 
 BuildRequires: a2x
 BuildRequires:	gtk-doc
+BuildRequires: gjs
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
 BuildRequires:	xsltproc
@@ -35,7 +32,6 @@ BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
-BuildRequires:	pkgconfig(gjs-1.0) >= 1.64.0-2
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires: pkgconfig(gnome-autoar-0)
@@ -218,6 +214,9 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
+%{_datadir}/dbus-1/services/org.gnome.Extensions.service
+%{_datadir}/dbus-1/services/org.gnome.Shell.Extensions.service
+%{_datadir}/dbus-1/services/org.gnome.Shell.Notifications.service
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
@@ -239,6 +238,7 @@ This package contains the documentation for %{name}.
 #{_userunitdir}/gnome-shell.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
+%{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
 %{_userunitdir}/gnome-shell-wayland.service
