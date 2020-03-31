@@ -15,10 +15,6 @@ License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1080
-Patch0001:      0001-ibusManager_fix-ibus-launch-error-because-of-wrong-method.patch
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/1084
-Patch0002:      0002-St_Ensure-to-update-entry-hint-visibility-with-IM-preedit.patch
 
 BuildRequires: a2x
 BuildRequires:	gtk-doc
