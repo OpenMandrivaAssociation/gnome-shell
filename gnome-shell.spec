@@ -18,6 +18,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 
 BuildRequires: a2x
 BuildRequires:	gtk-doc
+BuildRequires: gjs
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
 BuildRequires:	xsltproc
