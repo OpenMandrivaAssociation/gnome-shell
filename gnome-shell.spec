@@ -209,6 +209,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/applications/org.gnome.Extensions.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
+%{_datadir}/applications/org.gnome.Shell.Extensions.desktop
 %{_datadir}/bash-completion/completions/gnome-extensions
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
@@ -238,6 +239,7 @@ This package contains the documentation for %{name}.
 #{_userunitdir}/gnome-shell.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
+%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Shell.Extensions*.svg
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
