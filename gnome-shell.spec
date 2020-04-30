@@ -238,8 +238,6 @@ This package contains the documentation for %{name}.
 %{_userunitdir}/gnome-shell-x11.target
 #{_userunitdir}/gnome-shell.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
-%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
-%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Shell.Extensions*.svg
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %{_userunitdir}/gnome-shell-disable-extensions.service
