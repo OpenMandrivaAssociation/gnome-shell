@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.36.6
+Version:	3.38.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -52,8 +52,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires: pkgconfig(libmutter-6)
-BuildRequires: pkgconfig(mutter-clutter-6)
+BuildRequires: pkgconfig(libmutter-7)
+BuildRequires: pkgconfig(mutter-clutter-7)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -197,6 +197,7 @@ This package contains the documentation for %{name}.
 %files -f %{name}.lang
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
+%{_bindir}/gnome-extensions-app
 %{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
@@ -225,6 +226,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
+#{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
@@ -234,20 +236,17 @@ This package contains the documentation for %{name}.
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/gnome-extensions.1*
 %{_datadir}/xdg-desktop-portal/portals/%{name}.portal
-%{_userunitdir}/gnome-shell-wayland.target
-%{_userunitdir}/gnome-shell-x11.target
-#{_userunitdir}/gnome-shell.service
+%{_userunitdir}/org.gnome.Shell-disable-extensions.service
+%{_userunitdir}/org.gnome.Shell.target
+%{_userunitdir}/org.gnome.Shell@wayland.service
+%{_userunitdir}/org.gnome.Shell@x11.service
+
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
-%{_userunitdir}/gnome-shell-disable-extensions.service
-%{_userunitdir}/gnome-shell-wayland.service
-%{_userunitdir}/gnome-shell-x11.service
-   
 #files docs
 #{_datadir}/gtk-doc/html/shell
 #{_datadir}/gtk-doc/html/st
-
