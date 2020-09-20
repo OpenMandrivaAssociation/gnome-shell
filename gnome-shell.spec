@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.36.6
+Version:	3.38.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -52,8 +52,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires: pkgconfig(libmutter-6)
-BuildRequires: pkgconfig(mutter-clutter-6)
+BuildRequires: pkgconfig(libmutter-7)
+BuildRequires: pkgconfig(mutter-clutter-7)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
