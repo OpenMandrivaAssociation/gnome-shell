@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.38.1
+Version:	3.38.2
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
