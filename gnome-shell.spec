@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	3.38.4
+Version:	40.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -45,15 +45,15 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 1.45.3
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.11.92
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
-BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(ibus-1.0)
 BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires: pkgconfig(libmutter-7)
-BuildRequires: pkgconfig(mutter-clutter-7)
+BuildRequires: pkgconfig(libmutter-8)
+BuildRequires: pkgconfig(mutter-clutter-8)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -117,7 +117,7 @@ Requires:	typelib(Clutter)
 Requires:	typelib(ClutterX11)
 Requires:	typelib(Cogl)
 Requires:	typelib(CoglPango)
-Requires:   typelib(DBus)
+Requires: typelib(DBus)
 Requires:	typelib(GDesktopEnums)
 Requires:	typelib(GL)
 Requires:	typelib(GLib)
@@ -136,9 +136,9 @@ Requires:	typelib(Gio)
 Requires:	typelib(GnomeBluetooth)
 Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
-Requires:   typelib(GtkClutter)
+Requires: typelib(GtkClutter)
 #Requires:	typelib(Gvc)
-Requires:   typelib(Graphene)
+Requires: typelib(Graphene)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
 #Requires:	typelib(Meta)
@@ -148,7 +148,7 @@ Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
 Requires:	typelib(Polkit)
 Requires:	typelib(PolkitAgent)
-Requires:   typelib(Rsvg)
+Requires: typelib(Rsvg)
 #Requires:	typelib(Shell)
 Requires:	typelib(Soup)
 #Requires:	typelib(St)
@@ -183,7 +183,7 @@ This package contains the documentation for %{name}.
 %autopatch -p1
 
 %build
-%meson -Denable-documentation=true
+%meson -Dgtk_doc=true
 %meson_build
 
 %install
@@ -227,6 +227,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 #{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
+%{_datadir}/dbus-1/services/org.gnome.ScreenSaver.service
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
@@ -247,6 +248,6 @@ This package contains the documentation for %{name}.
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
-#files docs
-#{_datadir}/gtk-doc/html/shell
-#{_datadir}/gtk-doc/html/st
+%files docs
+%{_datadir}/gtk-doc/html/shell
+%{_datadir}/gtk-doc/html/st
