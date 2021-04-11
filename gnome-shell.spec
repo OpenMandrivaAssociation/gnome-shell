@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	40.0
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -158,6 +158,9 @@ Requires:	typelib(UPowerGlib)
 Requires:	typelib(cairo)
 Requires:	typelib(xfixes)
 Requires:	typelib(xlib)
+
+#Dirty fix
+Requires: %{_lib}handy-gir1
 
 %description
 The GNOME Shell redefines user interactions with the GNOME desktop. In
