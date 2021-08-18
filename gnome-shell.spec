@@ -9,16 +9,16 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	40.3
+Version:	40.4
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
-BuildRequires: a2x
+BuildRequires:  a2x
 BuildRequires:	gtk-doc
-BuildRequires: gjs
+BuildRequires:  gjs
 BuildRequires:	intltool >= 0.40
 BuildRequires:	rootcerts
 BuildRequires:	xsltproc
@@ -26,7 +26,7 @@ BuildRequires:	pkgconfig(caribou-1.0)
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(clutter-glx-1.0) >= 1.7.5
 BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
-BuildRequires: pkgconfig(bash-completion)
+BuildRequires:  pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gcr-3)
@@ -34,7 +34,7 @@ BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
-BuildRequires: pkgconfig(gnome-autoar-0)
+BuildRequires:  pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
@@ -52,8 +52,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires: pkgconfig(libmutter-8)
-BuildRequires: pkgconfig(mutter-clutter-8)
+BuildRequires:  pkgconfig(libmutter-8)
+BuildRequires:  pkgconfig(mutter-clutter-8)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -75,7 +75,7 @@ BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(libcroco-0.6)
 BuildRequires:  pkgconfig(libcanberra-gtk3)
 BuildRequires:  pkgconfig(libstartup-notification-1.0)
-BuildRequires:	 pkgconfig(libnm)
+BuildRequires:  pkgconfig(libnm)
 BuildRequires:  sassc
 BuildRequires:  egl-devel
 
