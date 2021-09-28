@@ -1,0 +1,12 @@
+diff -uraN gnome-shell-41.0/js/ui/environment.js omv-gnome-shell-41.0/js/ui/environment.js
+--- gnome-shell-41.0/js/ui/environment.js	2021-09-19 15:40:31.000000000 +0200
++++ omv-gnome-shell-41.0/js/ui/environment.js	2021-09-28 23:31:48.066027257 +0200
+@@ -7,7 +7,7 @@
+ imports.gi.versions.Gio = '2.0';
+ imports.gi.versions.GdkPixbuf = '2.0';
+ imports.gi.versions.Gtk = '3.0';
+-imports.gi.versions.Soup = '3.0';
++imports.gi.versions.Soup = '2.4';
+ imports.gi.versions.TelepathyGLib = '0.12';
+ imports.gi.versions.TelepathyLogger = '0.2';
+ 
