@@ -15,6 +15,7 @@ License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
 Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 BuildRequires:  a2x
@@ -151,7 +152,7 @@ Requires:	typelib(Polkit)
 Requires:	typelib(PolkitAgent)
 Requires:       typelib(Rsvg)
 #Requires:	typelib(Shell)
-#Requires:	typelib(Soup)
+Requires:	typelib(Soup)
 #Requires:	typelib(St)
 Requires:	typelib(TelepathyGLib)
 Requires:	typelib(TelepathyLogger)
