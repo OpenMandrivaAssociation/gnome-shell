@@ -186,7 +186,9 @@ This package contains the documentation for %{name}.
 %autopatch -p1
 
 %build
-%meson -Dgtk_doc=true
+%meson \
+        -Dgtk_doc=true \
+        -Dsoup2=true
 %meson_build
 
 %install
