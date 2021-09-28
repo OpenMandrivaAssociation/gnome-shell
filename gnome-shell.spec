@@ -15,6 +15,8 @@ License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
+Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
@@ -117,7 +119,7 @@ Requires:	typelib(Clutter)
 Requires:	typelib(ClutterX11)
 Requires:	typelib(Cogl)
 Requires:	typelib(CoglPango)
-Requires: typelib(DBus)
+Requires:       typelib(DBus)
 Requires:	typelib(GDesktopEnums)
 Requires:	typelib(GL)
 Requires:	typelib(GLib)
@@ -129,16 +131,16 @@ Requires:	typelib(Gcr)
 Requires:	typelib(GcrUi)
 Requires:	typelib(Gdk)
 Requires:	typelib(GdkPixbuf)
-#Requires:   typelib(GdPrivate)
+#Requires:      typelib(GdPrivate)
 Requires:	typelib(Gdm)
 Requires:	typelib(Geoclue)
 Requires:	typelib(Gio)
 Requires:	typelib(GnomeBluetooth)
 Requires:	typelib(GnomeDesktop)
 Requires:	typelib(Gtk)
-Requires: typelib(GtkClutter)
+Requires:       typelib(GtkClutter)
 #Requires:	typelib(Gvc)
-Requires: typelib(Graphene)
+Requires:       typelib(Graphene)
 Requires:	typelib(IBus)
 Requires:	typelib(Json)
 #Requires:	typelib(Meta)
@@ -148,7 +150,7 @@ Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
 Requires:	typelib(Polkit)
 Requires:	typelib(PolkitAgent)
-Requires: typelib(Rsvg)
+Requires:       typelib(Rsvg)
 #Requires:	typelib(Shell)
 Requires:	typelib(Soup)
 #Requires:	typelib(St)
