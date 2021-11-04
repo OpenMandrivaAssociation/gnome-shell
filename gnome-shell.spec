@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	41.0
+Version:	41.1
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
