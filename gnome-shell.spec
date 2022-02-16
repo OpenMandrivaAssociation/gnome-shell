@@ -18,6 +18,9 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
 Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
+# Upstream fix for build with meson 0.60+
+Patch1:         https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2078.patch
+
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
 BuildRequires:  gjs
