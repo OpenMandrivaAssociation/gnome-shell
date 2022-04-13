@@ -208,7 +208,7 @@ This package contains the documentation for %{name}.
 %files -f %{name}.lang
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
-%{_bindir}/gnome-extensions-app
+#{_bindir}/gnome-extensions-app
 %{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
@@ -231,10 +231,10 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/services/org.gnome.Shell.Extensions.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.Notifications.service
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
-%{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
+#{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
-%{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
+#{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 #{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
