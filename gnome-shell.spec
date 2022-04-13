@@ -233,6 +233,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 #{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
+%{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 #{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
