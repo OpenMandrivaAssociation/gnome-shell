@@ -9,17 +9,17 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	41.4
+Version:	42.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
-Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
+#Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 # Upstream fix for build with meson 0.60+
-Patch1:         https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2078.patch
+#Patch1:         https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2078.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
@@ -40,7 +40,7 @@ BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires:  pkgconfig(gnome-autoar-0)
-BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
+BuildRequires:	pkgconfig(gnome-bluetooth-3.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 # NOT READY YET
@@ -57,13 +57,14 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-9)
-BuildRequires:  pkgconfig(mutter-clutter-9)
+BuildRequires:  pkgconfig(libmutter-10)
+BuildRequires:  pkgconfig(mutter-clutter-10)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(libpipewire-0.3) 
 BuildRequires:	pkgconfig(polkit-agent-1) >= 0.100
 BuildRequires:	pkgconfig(polkit-gobject-1)
 BuildRequires:	pkgconfig(systemd)
