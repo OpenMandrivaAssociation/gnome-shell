@@ -9,17 +9,18 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	42.0
+Version:	42.1
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+
+# Mandriva patches
+# Looks like it is still requires because soup3 is still pulled even when we compile g-s with soup2.
+# Anyway no big issue right now, as we already (from gnome 42) have in repo soup3.
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
 #Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
-
-# Upstream fix for build with meson 0.60+
-#Patch1:         https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2078.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
