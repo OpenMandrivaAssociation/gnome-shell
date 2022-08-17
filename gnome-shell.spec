@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	42.4
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -21,6 +21,9 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 # Anyway no big issue right now, as we already (from gnome 42) have in repo soup3.
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/4646
 #Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
+
+# From Fedora
+Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
