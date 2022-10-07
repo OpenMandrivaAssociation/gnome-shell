@@ -25,6 +25,13 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 # From Fedora
 Patch1:          gnome-shell-favourite-apps-firefox.patch
 
+# Backported from upstream
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2487
+Patch0: 2487.patch
+# Backported from upstream
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2495
+Patch1: 2495.patch
+
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
 BuildRequires:  gjs
@@ -197,7 +204,7 @@ This package contains the documentation for %{name}.
 %build
 %meson \
         -Dgtk_doc=true \
-        -Dsoup2=true
+        -Dsoup2=false
 %meson_build
 
 %install
