@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
 BuildRequires:  pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(gcr4)
+BuildRequires:	pkgconfig(gcr-4)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
