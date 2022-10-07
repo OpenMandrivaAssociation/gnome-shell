@@ -9,8 +9,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	42.4
-Release:	2
+Version:	43.0
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -25,6 +25,13 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 # From Fedora
 Patch1:          gnome-shell-favourite-apps-firefox.patch
 
+# Backported from upstream
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2487
+Patch10: 2487.patch
+# Backported from upstream
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2495
+Patch11: 2495.patch
+
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
 BuildRequires:  gjs
@@ -38,7 +45,7 @@ BuildRequires:	pkgconfig(clutter-x11-1.0) >= 1.7.5
 BuildRequires:  pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(folks) >= 0.5.2
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(gcr-3)
+BuildRequires:	pkgconfig(gcr-4)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
@@ -61,12 +68,12 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-10)
-BuildRequires:  pkgconfig(mutter-clutter-10)
+BuildRequires:  pkgconfig(libmutter-11)
+BuildRequires:  pkgconfig(mutter-clutter-11)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
-BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libsoup-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(libpipewire-0.3) 
 BuildRequires:	pkgconfig(polkit-agent-1) >= 0.100
@@ -136,7 +143,6 @@ Requires:	typelib(GObject)
 Requires:	typelib(GWeather)
 Requires:	typelib(Gck)
 Requires:	typelib(Gcr)
-Requires:	typelib(GcrUi)
 Requires:	typelib(Gdk)
 Requires:	typelib(GdkPixbuf)
 #Requires:      typelib(GdPrivate)
@@ -198,7 +204,7 @@ This package contains the documentation for %{name}.
 %build
 %meson \
         -Dgtk_doc=true \
-        -Dsoup2=true
+        -Dsoup2=false
 %meson_build
 
 %install
