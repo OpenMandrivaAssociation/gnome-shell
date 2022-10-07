@@ -27,10 +27,10 @@ Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2487
-Patch0: 2487.patch
+Patch10: 2487.patch
 # Backported from upstream
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2495
-Patch1: 2495.patch
+Patch11: 2495.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
