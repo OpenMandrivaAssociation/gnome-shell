@@ -26,11 +26,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2487
-Patch10: 2487.patch
-# Backported from upstream
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2495
-Patch11: 2495.patch
+
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
