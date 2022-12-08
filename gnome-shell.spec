@@ -26,13 +26,6 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
- 
- 
-# Backport fix for keyboard shortcut inhibit permissions
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/6107
-# https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/872
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2548
-Patch4:     0001-inhibitShorcutsDialog-Fix-permission-check.patch
 
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
