@@ -9,8 +9,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	43.1
-Release:	2
+Version:	43.2
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -32,9 +32,6 @@ Patch1:          gnome-shell-favourite-apps-firefox.patch
 # Fix layout switching in password entry boxes
 Patch2:     2534.patch
  
-# Backport broken screen cast fix if gstreamer1-vaapi was installed.
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2533
-Patch3:     post-43.1-fixes.patch
  
 # Backport fix for keyboard shortcut inhibit permissions
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/6107
