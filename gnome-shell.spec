@@ -26,11 +26,6 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%
 Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
-
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2534
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/6066
-# Fix layout switching in password entry boxes
-Patch2:     2534.patch
  
  
 # Backport fix for keyboard shortcut inhibit permissions
