@@ -47,7 +47,7 @@ BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires:  pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-3.0)
-BuildRequires:	pkgconfig(gnome-desktop-3.0)
+BuildRequires:	pkgconfig(gnome-desktop-4)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 # NOT READY YET
 #BuildRequires:	pkgconfig(gnome-keybindings)
