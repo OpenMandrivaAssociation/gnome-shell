@@ -214,15 +214,15 @@ This package contains the documentation for %{name}.
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
 #{_bindir}/gnome-extensions-app
-%{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
+#{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
-%{_libexecdir}/gnome-shell-overrides-migration.sh
+#{_libexecdir}/gnome-shell-overrides-migration.sh
 %{_datadir}/applications/org.gnome.Shell.desktop
-%{_datadir}/applications/evolution-calendar.desktop
+#{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/org.gnome.Extensions.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
