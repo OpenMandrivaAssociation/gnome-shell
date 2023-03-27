@@ -198,7 +198,7 @@ This package contains the documentation for %{name}.
 
 %build
 %meson \
-        -Dgtk_doc=true \
+        -Dgtk_doc=false \
         -Dsoup2=false
 %meson_build
 
