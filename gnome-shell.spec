@@ -266,5 +266,5 @@ This package contains the documentation for %{name}.
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %files docs
-%{_datadir}/gtk-doc/html/shell
-%{_datadir}/gtk-doc/html/st
+#{_datadir}/gtk-doc/html/shell
+#{_datadir}/gtk-doc/html/st
