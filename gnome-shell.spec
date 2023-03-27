@@ -9,8 +9,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	43.3
-Release:	2
+Version:	44.0
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
@@ -47,7 +47,7 @@ BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
 BuildRequires:  pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-3.0)
-BuildRequires:	pkgconfig(gnome-desktop-3.0)
+BuildRequires:	pkgconfig(gnome-desktop-4)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 # NOT READY YET
 #BuildRequires:	pkgconfig(gnome-keybindings)
@@ -63,8 +63,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-11)
-BuildRequires:  pkgconfig(mutter-clutter-11)
+BuildRequires:  pkgconfig(libmutter-12)
+BuildRequires:  pkgconfig(mutter-clutter-12)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -198,7 +198,7 @@ This package contains the documentation for %{name}.
 
 %build
 %meson \
-        -Dgtk_doc=true \
+        -Dgtk_doc=false \
         -Dsoup2=false
 %meson_build
 
@@ -214,15 +214,15 @@ This package contains the documentation for %{name}.
 %doc README.md NEWS HACKING.md
 %{_bindir}/*
 #{_bindir}/gnome-extensions-app
-%{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
+#{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
-%{_libexecdir}/gnome-shell-overrides-migration.sh
+#{_libexecdir}/gnome-shell-overrides-migration.sh
 %{_datadir}/applications/org.gnome.Shell.desktop
-%{_datadir}/applications/evolution-calendar.desktop
+#{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/org.gnome.Extensions.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
@@ -266,5 +266,5 @@ This package contains the documentation for %{name}.
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %files docs
-%{_datadir}/gtk-doc/html/shell
-%{_datadir}/gtk-doc/html/st
+#{_datadir}/gtk-doc/html/shell
+#{_datadir}/gtk-doc/html/st
