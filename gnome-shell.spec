@@ -1,7 +1,6 @@
 %define _disable_rebuild_configure 1
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 # To make GNOME Shell extensions load, we need to get rid of DT_RUNPATH on /usr/bin/gnome-shell
-# (see glibc bug #13945, GNOME bug #670477, Mageia bug #4523)
 %define _disable_ld_enable_new_dtags 1
 #define debug_package %{nil}
 
@@ -9,8 +8,8 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	44.0
-Release:	2
+Version:	44.1
+Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://live.gnome.org/GnomeShell
