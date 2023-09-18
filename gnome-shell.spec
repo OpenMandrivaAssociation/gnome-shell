@@ -9,12 +9,12 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	44.4
+Version:	45.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
-Url:		http://live.gnome.org/GnomeShell
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://live.gnome.org/GnomeShell
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
 # Mandriva patches
 # Looks like it is still requires because soup3 is still pulled even when we compile g-s with soup2.
