@@ -9,12 +9,12 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	44.4
+Version:	45.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
-Url:		http://live.gnome.org/GnomeShell
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://live.gnome.org/GnomeShell
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
 
 # Mandriva patches
 # Looks like it is still requires because soup3 is still pulled even when we compile g-s with soup2.
@@ -63,8 +63,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-12)
-BuildRequires:  pkgconfig(mutter-clutter-12)
+BuildRequires:  pkgconfig(libmutter-13)
+BuildRequires:  pkgconfig(mutter-clutter-13)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -101,7 +101,8 @@ Requires:	gsettings-desktop-schemas
 Requires:	packagekit-gtk3-module
 Requires:	telepathy-mission-control
 Requires:	gnome-control-center
-Requires:	libgnomekbd-common
+Requires:       tecla
+#Requires:	libgnomekbd-common
 # Optional 
 Recommends:	chrome-gnome-shell
 Recommends: gnome-tweaks
@@ -198,8 +199,7 @@ This package contains the documentation for %{name}.
 
 %build
 %meson \
-        -Dgtk_doc=false \
-        -Dsoup2=false
+        -Dgtk_doc=false
 %meson_build
 
 %install
