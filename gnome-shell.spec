@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	45.0
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://live.gnome.org/GnomeShell
@@ -156,6 +156,7 @@ Requires:	typelib(Json)
 #Requires:	typelib(Meta)
 Requires:	typelib(NM)
 Requires:	typelib(NMA)
+Requires:       typelib(NMA4)
 Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
 Requires:	typelib(Polkit)
