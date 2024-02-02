@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	45.3
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://live.gnome.org/GnomeShell
@@ -95,6 +95,7 @@ Requires:	at-spi2-atk
 Requires:	gjs
 Requires:	glxinfo
 Requires:	gnome-session
+Requires:	gnome-session-bin
 Requires:	adwaita-icon-theme
 Requires:	gnome-settings-daemon
 Requires:	gsettings-desktop-schemas
