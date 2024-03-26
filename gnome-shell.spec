@@ -252,6 +252,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/gnome-extensions.1*
