@@ -23,7 +23,7 @@ Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-
 #Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 # From Fedora
-Patch1:          gnome-shell-favourite-apps-firefox.patch
+#Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
 
