@@ -213,7 +213,7 @@ This package contains the documentation for %{name}.
 %systemd_user_post %{systemd_units}
 
 %files -f %{name}.lang
-%doc README.md NEWS HACKING.md
+%doc README.md NEWS
 %{_bindir}/*
 #{_bindir}/gnome-extensions-app
 #{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
@@ -255,7 +255,7 @@ This package contains the documentation for %{name}.
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/gnome-extensions.1*
-%{_datadir}/xdg-desktop-portal/portals/%{name}.portal
+#{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/org.gnome.Shell-disable-extensions.service
 %{_userunitdir}/org.gnome.Shell.target
 %{_userunitdir}/org.gnome.Shell@wayland.service
