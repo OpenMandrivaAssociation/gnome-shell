@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	45.4
+Version:	46.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -23,7 +23,7 @@ Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-
 #Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 # From Fedora
-Patch1:          gnome-shell-favourite-apps-firefox.patch
+#Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
 
@@ -63,8 +63,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-13)
-BuildRequires:  pkgconfig(mutter-clutter-13)
+BuildRequires:  pkgconfig(libmutter-14)
+BuildRequires:  pkgconfig(mutter-clutter-14)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -213,7 +213,7 @@ This package contains the documentation for %{name}.
 %systemd_user_post %{systemd_units}
 
 %files -f %{name}.lang
-%doc README.md NEWS HACKING.md
+%doc README.md NEWS
 %{_bindir}/*
 #{_bindir}/gnome-extensions-app
 #{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
@@ -252,10 +252,11 @@ This package contains the documentation for %{name}.
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/gnome-extensions.1*
-%{_datadir}/xdg-desktop-portal/portals/%{name}.portal
+#{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/org.gnome.Shell-disable-extensions.service
 %{_userunitdir}/org.gnome.Shell.target
 %{_userunitdir}/org.gnome.Shell@wayland.service
