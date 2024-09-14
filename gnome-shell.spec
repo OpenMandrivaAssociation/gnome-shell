@@ -268,6 +268,8 @@ This package contains the documentation for %{name}.
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.CaptivePortal.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.CaptivePortal-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %files docs
