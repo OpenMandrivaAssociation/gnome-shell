@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	46.4
+Version:	47.rc
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -63,8 +63,8 @@ BuildRequires:	pkgconfig(libcanberra)
 BuildRequires:	pkgconfig(libecal-2.0)
 BuildRequires:	pkgconfig(libedataserver-1.2) >= 1.2.0
 BuildRequires:	pkgconfig(libgnome-menu-3.0) >= 3.6.0
-BuildRequires:  pkgconfig(libmutter-14)
-BuildRequires:  pkgconfig(mutter-clutter-14)
+BuildRequires:  pkgconfig(libmutter-15)
+BuildRequires:  pkgconfig(mutter-clutter-15)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
@@ -113,6 +113,7 @@ Requires:	unzip
 Provides:	virtual-notification-daemon
 Provides:	polkit-agent
 
+Requires:	gtk4
 Requires:	gtk+3.0
 Requires:	json-glib
 Requires:	librsvg
@@ -122,6 +123,7 @@ Requires:	pipewire
 # TYPELIBS #
 # Looks like typelibs generator is broken for Cooker, so all needed gir packages should be added below
 # omv bug https://issues.openmandriva.org/show_bug.cgi?id=2534
+# edit: should be fixed now, but keep these requires for sanity
 
 Requires:	typelib(AccountsService)
 Requires:	typelib(Atk)
