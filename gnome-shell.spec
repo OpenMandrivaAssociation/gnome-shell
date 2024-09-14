@@ -79,7 +79,7 @@ BuildRequires:	pkgconfig(telepathy-logger-0.2)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xfixes)
 BuildRequires:	gettext-devel
-
+BuildRequires:  python-docutils
 BuildRequires:  meson
 BuildRequires:  pkgconfig(ibus-1.0)
 BuildRequires:  pkgconfig(gjs-1.0)
