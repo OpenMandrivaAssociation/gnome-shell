@@ -200,6 +200,8 @@ This package contains the documentation for %{name}.
 %prep
 %setup -q
 %autopatch -p1
+# fix for wrong version
+sed -i "/schemas_req/s/\.alpha//" meson.build
 
 %build
 %meson \
