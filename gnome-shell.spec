@@ -10,11 +10,12 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	47.0
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://live.gnome.org/GnomeShell
 Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-shell/%{url_ver}/%{name}-%{version}.tar.xz
+Source100:	50_gnome-openmandriva.gschema.override
 
 # Mandriva patches
 # Looks like it is still requires because soup3 is still pulled even when we compile g-s with soup2.
@@ -209,6 +210,9 @@ This package contains the documentation for %{name}.
 %install
 %meson_install
 
+# OpenMandriva style
+install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-openmandriva.gschema.override
+
 %find_lang %{name}
 
 %post
@@ -252,6 +256,7 @@ This package contains the documentation for %{name}.
 #{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
+%{_datadir}/glib-2.0/schemas/50_gnome-openmandriva.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
