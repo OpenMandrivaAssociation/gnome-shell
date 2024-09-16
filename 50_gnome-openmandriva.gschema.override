@@ -1,0 +1,5 @@
+[org.gnome.desktop.background]
+picture-uri = 'file:///usr/share/backgrounds/gnome/magic-forrest-driva.jxl'
+
+[org.gnome.desktop.screensaver]
+picture-uri = 'file:///usr/share/backgrounds/gnome/magic-forrest-driva.jxl'
