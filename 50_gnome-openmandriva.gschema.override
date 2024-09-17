@@ -3,3 +3,6 @@ picture-uri = 'file:///usr/share/backgrounds/gnome/magic-forrest-driva.jxl'
 
 [org.gnome.desktop.screensaver]
 picture-uri = 'file:///usr/share/backgrounds/gnome/magic-forrest-driva.jxl'
+
+[org.gnome.shell]
+favorite-apps=['firefox.desktop', 'org.gnome.Calendar.desktop', 'com.github.neithern.g4music.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.gnome.TextEditor.desktop']
