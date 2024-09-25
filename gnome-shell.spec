@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	47.0
-Release:	4
+Release:	5
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://live.gnome.org/GnomeShell
@@ -24,7 +24,7 @@ Source100:	50_gnome-openmandriva.gschema.override
 #Patch0:         gnome-shell-41.0-dirty-fix-for-stop-requiring-soup3-mandriva.patch
 
 # From Fedora
-Patch1:          gnome-shell-favourite-apps-firefox.patch
+#Patch1:          gnome-shell-favourite-apps-firefox.patch
 
 # Backported from upstream
 
