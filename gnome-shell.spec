@@ -10,7 +10,7 @@
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
 Version:	47.4
-Release:	1
+Release:	2
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://live.gnome.org/GnomeShell
@@ -120,6 +120,10 @@ Requires:	json-glib
 Requires:	librsvg
 Requires:	mutter
 Requires:	pipewire
+
+# this is wrong, it should be a part of glibc but due ducking system split policy is not here.
+# ducking duckers!
+Requires:	locales-extra-charsets
 
 # TYPELIBS #
 # Looks like typelibs generator is broken for Cooker, so all needed gir packages should be added below
