@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	47.5
+Version:	48.rc
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -105,8 +105,7 @@ Requires:	telepathy-mission-control
 Requires:	gnome-control-center
 Requires:       tecla
 #Requires:	libgnomekbd-common
-# Optional 
-Recommends:	chrome-gnome-shell
+
 Recommends: gnome-tweaks
 Requires:	gdm
 Requires:	unzip
@@ -203,7 +202,6 @@ BuildArch:	noarch
 This package contains the documentation for %{name}.
 
 %prep
-%setup -q
 %autopatch -p1
 
 %build
