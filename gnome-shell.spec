@@ -202,7 +202,7 @@ BuildArch:	noarch
 This package contains the documentation for %{name}.
 
 %prep
-%autopatch -p1
+%autosetup -p1
 
 %build
 %meson \
