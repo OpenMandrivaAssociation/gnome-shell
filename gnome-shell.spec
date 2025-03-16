@@ -253,6 +253,7 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 #{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.ScreenTime.xml
 #{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
 %{_datadir}/dbus-1/services/org.gnome.ScreenSaver.service
 #{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
@@ -262,6 +263,8 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
+%{_datadir}/desktop-directories/X-GNOME-Shell-System.directory
+%{_datadir}/desktop-directories/X-GNOME-Shell-Utilities.directory
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/gnome-extensions.1*
