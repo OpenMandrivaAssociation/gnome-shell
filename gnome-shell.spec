@@ -9,7 +9,7 @@
 
 Summary:	Next generation GNOME desktop shell
 Name:		gnome-shell
-Version:	48.rc
+Version:	48.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/GNOME
@@ -28,6 +28,7 @@ Source100:	50_gnome-openmandriva.gschema.override
 
 # Backported from upstream
 
+BuildRequires:  appstream
 BuildRequires:  a2x
 BuildRequires:	gtk-doc
 BuildRequires:  gjs
@@ -50,8 +51,7 @@ BuildRequires:  pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-3.0)
 BuildRequires:	pkgconfig(gnome-desktop-4)
 BuildRequires:	pkgconfig(gnome-keyring-1)
-# NOT READY YET
-#BuildRequires:	pkgconfig(gnome-keybindings)
+BuildRequires:	pkgconfig(gnome-keybindings)
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 1.45.3
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
