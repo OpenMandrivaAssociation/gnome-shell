@@ -256,6 +256,7 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.ScreenTime.xml
 #{_datadir}/dbus-1/services/org.gnome.Shell.Screencast.service
 %{_datadir}/dbus-1/services/org.gnome.ScreenSaver.service
+%{_datadir}/dbus-1/interfaces/org.gnome.Shell.Brightness.xml
 #{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.gschema.xml
 %{_datadir}/glib-2.0/schemas/00_org.gnome.shell.gschema.override
