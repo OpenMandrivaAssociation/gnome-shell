@@ -231,7 +231,7 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
 #{_libexecdir}/gnome-shell-overrides-migration.sh
-%{_datadir}/applications/org.gnome.Shell.desktop
+#{_datadir}/applications/org.gnome.Shell.desktop
 #{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/org.gnome.Extensions.desktop
 #{_datadir}/applications/gnome-shell-wayland.desktop
