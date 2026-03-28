@@ -271,7 +271,7 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_mandir}/man1/gnome-extensions.1*
 #{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/org.gnome.Shell-disable-extensions.service
-
+%{_userunitdir}/org.gnome.Shell@.service
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
