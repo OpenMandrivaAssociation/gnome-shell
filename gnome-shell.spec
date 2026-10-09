@@ -225,18 +225,11 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %files -f %{name}.lang
 %doc README.md NEWS
 %{_bindir}/*
-#{_bindir}/gnome-extensions-app
-#{_sysconfdir}/xdg/autostart/gnome-shell-overrides-migration.desktop
 %{_libdir}/%{name}
 %{_libexecdir}/gnome-shell-calendar-server
 %{_libexecdir}/gnome-shell-hotplug-sniffer
 %{_libexecdir}/gnome-shell-perf-helper
 %{_libexecdir}/gnome-shell-portal-helper
-#{_libexecdir}/gnome-shell-overrides-migration.sh
-#{_datadir}/applications/org.gnome.Shell.desktop
-#{_datadir}/applications/evolution-calendar.desktop
-%{_datadir}/applications/org.gnome.Extensions.desktop
-#{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %{_datadir}/applications/org.gnome.Shell.Extensions.desktop
 %{_datadir}/bash-completion/completions/gnome-extensions
@@ -244,7 +237,6 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 %{_datadir}/dbus-1/services/org.gnome.Shell.CalendarServer.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
-%{_datadir}/dbus-1/services/org.gnome.Extensions.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.Extensions.service
 %{_datadir}/dbus-1/services/org.gnome.Shell.Notifications.service
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
@@ -265,7 +257,6 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_datadir}/glib-2.0/schemas/50_gnome-openmandriva.gschema.override
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 %{_datadir}/gnome-control-center/keybindings/*%{name}*.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
 %{_datadir}/desktop-directories/X-GNOME-Shell-System.directory
 %{_datadir}/desktop-directories/X-GNOME-Shell-Utilities.directory
 %{_datadir}/%{name}
@@ -274,13 +265,10 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 #{_datadir}/xdg-desktop-portal/portals/%{name}.portal
 %{_userunitdir}/org.gnome.Shell-disable-extensions.service
 %{_userunitdir}/org.gnome.Shell@.service
-%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Extensions*
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.Extensions.svg
-%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Extensions-symbolic.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.Extensions-symbolic.svg
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Shell.CaptivePortal.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Shell.CaptivePortal-symbolic.svg
-%{_datadir}/metainfo/org.gnome.Extensions.metainfo.xml
 
 %files docs
 #{_datadir}/gtk-doc/html/shell
