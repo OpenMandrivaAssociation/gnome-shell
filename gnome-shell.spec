@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-x11-3.0)
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.6
 BuildRequires:	pkgconfig(gl)
+BuildRequires:  pkgconfig(glycin-2)
 BuildRequires:  pkgconfig(gnome-autoar-0)
 BuildRequires:	pkgconfig(gnome-bluetooth-3.0)
 BuildRequires:	pkgconfig(gnome-desktop-4)
