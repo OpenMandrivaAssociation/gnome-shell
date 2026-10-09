@@ -70,6 +70,7 @@ BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-mainloop-glib)
 BuildRequires:	pkgconfig(libsoup-3.0)
+BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(libpipewire-0.3) 
 BuildRequires:	pkgconfig(polkit-agent-1) >= 0.100
