@@ -232,6 +232,7 @@ install -pm 0644 %{SOURCE100} %{buildroot}%{_datadir}/glib-2.0/schemas/50_gnome-
 %{_libexecdir}/gnome-shell-portal-helper
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %{_datadir}/applications/org.gnome.Shell.Extensions.desktop
+%{_datadir}/applications/org.gnome.Shell.CalendarServer.desktop
 %{_datadir}/bash-completion/completions/gnome-extensions
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
